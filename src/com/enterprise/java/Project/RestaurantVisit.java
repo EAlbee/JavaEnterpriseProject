@@ -11,7 +11,8 @@ import java.sql.*;
 public class RestaurantVisit {
 
     private String visitRestaurantName;
-    private String visitLocation;
+    private String visitLocationCity;
+    private String visitLocationState;
     private Date visitDate;
     private String visitItem;
     private String visitDescription;
@@ -38,21 +39,37 @@ public class RestaurantVisit {
 
 
     /**
-     * Returns the value of visitLocation.
+     * Returns the value of visitLocationCity.
      */
-    public String getVisitLocation() {
-        return visitLocation;
+    public String getVisitLocationCity() {
+        return visitLocationCity;
     }
 
 
     /**
-     * Sets the value of visitLocation.
-     * @param visitLocation The value to assign visitLocation.
+     * Sets the value of visitLocationCity.
+     * @param visitLocationCity The value to assign visitLocationCity.
      */
-    public void setVisitLocation(String visitLocation) {
-        this.visitLocation = visitLocation;
+    public void setVisitLocationCity(String visitLocationCity) {
+        this.visitLocationCity = visitLocationCity;
     }
 
+
+    /**
+     * Returns the value of visitLocationState.
+     */
+    public String getVisitLocationState() {
+        return visitLocationState;
+    }
+
+
+    /**
+     * Sets the value of visitLocationState.
+     * @param visitLocationState The value to assign visitLocationState.
+     */
+    public void setVisitLocationState(String visitLocationState) {
+        this.visitLocationState = visitLocationState;
+    }
 
 
     /**
@@ -172,5 +189,4 @@ public class RestaurantVisit {
     public void setVisitRating(int visitRating) {
         this.visitRating = visitRating;
     }
-
 }
