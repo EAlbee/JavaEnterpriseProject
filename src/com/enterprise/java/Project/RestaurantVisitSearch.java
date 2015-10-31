@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * Created by Student on 10/31/2015.
- * Restaraunt Search Bean
+ * Restaurant Search Bean
  * @author    EAlbee
  */
 public class RestaurantVisitSearch extends java.lang.Object{
