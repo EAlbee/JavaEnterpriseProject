@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Welcome To EAlbee Enterprise Project</title>
+    <title>Welcome To EAlbee Enterprise Project OK</title>
 </head>
 <body>
   <form action="j_security_check" method="post">

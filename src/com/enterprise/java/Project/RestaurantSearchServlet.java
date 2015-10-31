@@ -8,7 +8,7 @@ import javax.servlet.annotation.*;
 /**
  * Created by Student on 10/30/2015.
  */
-public class RestaruantSearch extends HttpServlet {
+public class RestaurantSearchServlet extends HttpServlet {
 
     /**
      *  Handles HTTP GET requests.
@@ -21,7 +21,7 @@ public class RestaruantSearch extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String url = "/EmployeeSearch.jsp";
+        String url = "/RestaurantVisitSearchContent.jsp";
         RequestDispatcher dispatcher =
                 getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);

@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<form method="GET" action="EmployeeSearchResults" />
+<form method="GET" action="SearchResults" />
 
 <label for"lastName"></label>
 <input type="text" name="lastName" value="" autofocus/>
