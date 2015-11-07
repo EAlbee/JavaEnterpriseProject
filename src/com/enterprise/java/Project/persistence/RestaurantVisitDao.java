@@ -1,10 +1,15 @@
 package com.enterprise.java.Project.persistence;
 
+
+import java.util.List;
+import java.util.Iterator;
 import com.enterprise.java.Project.RestaurantVisit;
 import com.enterprise.java.Project.RestaurantVisitSearch;
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+
 
 
 /**
@@ -31,14 +36,22 @@ public class RestaurantVisitDao {
         return restaurantVisitID;
     }
 
-    public Integer searchRestaurantVisit(RestaurantVisitSearch restaurantVisitSearch) {
-
+    public void searchRestaurantVisit(RestaurantVisitSearch restaurantVisitSearch) {
+        //TODO update to return a list
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
-        Integer restaurantVisitID = null;
+        String hql = "FROM com.enterprise.java.Project.RestaurantVisit V WHERE V.id = 10"
+
         try {
             tx = session.beginTransaction();
-            restaurantVisitID = (Integer) session.save(restaurantVisit);
+            //List restaurantVisits = session.createQuery("FROM com.enterprise.java.Project.RestaurantVisit").list();
+            Query query = session.createQuery(hql);
+            List restaurantVisits = query.list();
+            for (Iterator iterator =
+                    restaurantVisits.iterator(); iterator.hasNext();){
+                RestaurantVisit restaurantVisit = (RestaurantVisit) iterator.next();
+
+            }
             tx.commit();
         } catch (HibernateException e) {
             if (tx!=null) tx.rollback();
@@ -46,6 +59,6 @@ public class RestaurantVisitDao {
         } finally {
             session.close();
         }
-        return restaurantVisitID;
+
     }
 }
