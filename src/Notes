@@ -1,0 +1,30 @@
+ALTER TABLE sample.users ADD id INT NOT NULL PRIMARY KEY AUTO_INCREMENT;
+
+create table users (
+user_name         varchar(15) not null primary key,
+user_pass         varchar(15) not null
+);
+
+
+
+create table restaurant_visit_temp (
+id	int not null primary key auto_increment,
+restaurant_name		varchar(30) not null,
+date	datetime,
+item	varchar(30),
+cost	numeric(4,2)
+);
+
+
+
+    private int id;
+    private String visitRestaurantName;
+    private String visitLocationCity;
+    private String visitLocationState;
+    //private Date visitDate;
+    private String visitItem;
+    private String visitDescription;
+    private Double visitBillAmount;
+    private Double visitTipAmount;
+    private Double visitTotalCost;
+    private int visitRating;

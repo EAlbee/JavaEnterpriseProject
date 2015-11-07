@@ -12,7 +12,15 @@
 </head>
 <body>
 
-<form method="GET" action="SearchResults" />
+<form method="GET" action="RestaurantVisitSearchResults" />
+
+<%--<label for"lastName"></label>--%>
+<%--<input type="text" name="lastName" value="" autofocus/>--%>
+<%--<label for"ID">ID</label>--%>
+<%--<input type="radio" name="search" id="ID" value="searchID" checked="checked" />--%>
+<%--<label for"LastName">LastName</label>--%>
+<%--<input type="radio" name="search" id= "LastName" value="searchName" />--%>
+<%--<input type="submit" name="" value="Search" />--%>
 
 <label for"lastName"></label>
 <input type="text" name="lastName" value="" autofocus/>

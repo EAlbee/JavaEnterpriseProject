@@ -1,5 +1,7 @@
 package com.enterprise.java.Project;
 
+import com.enterprise.java.Project.persistence.RestaurantVisitDao;
+
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -30,7 +32,9 @@ public class RestaurantResultsServlet extends HttpServlet {
         RestaurantVisitSearch restaurantVisitSearch = new RestaurantVisitSearch();
         ServletContext context = getServletContext();
         HttpSession session = request.getSession();
-        RestaurantVisitLog restaurantVisitLog = new RestaurantVisitLog();
+          //RestaurantVisitLog restaurantVisitLog = new RestaurantVisitLog();
+          //Adding Dao here instead
+        RestaurantVisitDao restaurantVisitDao = new RestaurantVisitDao();
 
         //ServletContext context = getServletContext();
         //context.setAttribute("project4Properties", properties);
@@ -41,7 +45,7 @@ public class RestaurantResultsServlet extends HttpServlet {
 
 
 
-        restaurantVisitLog = (RestaurantVisitLog)context.getAttribute("restaurantVisitLog");
+        restaurantVisitDao = (RestaurantVisitDao)context.getAttribute("restaurantVisitDao");
 
         //String lastName = request.getParameter("lastName");
         //String searchID = request.getParameter("searchID");
@@ -59,6 +63,13 @@ public class RestaurantResultsServlet extends HttpServlet {
 //
 //        }
 
+        if (type.equals("searchID")) {
+            restaurantVisitDao.SearchEmployeeID(restaurantVisitSearch);
+        }
+        else {
+            restaurantVisitDao.SearchEmployeeLastName(restaurantVisitSearch);
+
+        }
         //TEMP
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();

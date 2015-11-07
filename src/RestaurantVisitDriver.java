@@ -15,8 +15,8 @@ import org.hibernate.cfg.Configuration;
 public class RestaurantVisitDriver {
     public static void main(String[] args) {
         RestaurantVisitDao dao = new RestaurantVisitDao();
-        RestaurantVisit restaurantVisit = new RestaurantVisit(0, "The Old Fashioned", "Madison", "WI",
-                "Burger", "Desc", 9.00, 1.00, 10.00, 5);
+        RestaurantVisit restaurantVisit = new RestaurantVisit(0, "The Tornado Room", "Madison", "WI",
+                "Steak", "Desc", 20.00, 5.00, 25.00, 5);
         //UserRole userRole = new UserRole(0, "admin", "admin");
         dao.addRestaurantVisit(restaurantVisit);
     }

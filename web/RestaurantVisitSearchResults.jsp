@@ -11,7 +11,7 @@
     <title></title>
 </head>
 <body>
-<h2>Employee Search  <!--c:import url="/jsp/EmployeeSearchResultsFooter.jsp" /--></h2>
+<h2>Restaurant Search  <!--c:import url="/jsp/EmployeeSearchResultsFooter.jsp" /--></h2>
 <h3>${type} Results for: ${term}</h3>
 
 <table >
