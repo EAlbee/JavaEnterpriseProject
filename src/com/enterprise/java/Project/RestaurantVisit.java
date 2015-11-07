@@ -10,16 +10,50 @@ import java.sql.*;
  */
 public class RestaurantVisit {
 
+    private int id;
     private String visitRestaurantName;
     private String visitLocationCity;
     private String visitLocationState;
-    private Date visitDate;
+    //private Date visitDate;
     private String visitItem;
     private String visitDescription;
     private Double visitBillAmount;
     private Double visitTipAmount;
     private Double visitTotalCost;
     private int visitRating;
+
+    public RestaurantVisit() {
+
+    }
+
+    public RestaurantVisit(int id, String name, String city, String state, String item, String description,
+                    double bill, double tip, double cost, int rating) {
+        this.id = id;
+        this.visitRestaurantName = name;
+        this.visitLocationCity = city;
+        this.visitLocationState = state;
+        this.visitItem = item;
+        this.visitDescription = description;
+        this.visitBillAmount = bill;
+        this.visitTipAmount = tip;
+        this.visitTotalCost = cost;
+        this.visitRating = rating;
+    }
+
+    /**
+     * Returns the value of id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Sets the value of Id.
+     * @param id
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
 
     /**
      * Returns the value of visitRestaurantName.
@@ -74,16 +108,16 @@ public class RestaurantVisit {
 
     /**
      * Returns the value of visitDate.
-     */
+     *//*
     public Date getVisitDate() {
         return visitDate;
     }
 
 
-    /**
+    *//**
      * Sets the value of visitDate.
      * @param visitDate The value to assign visitDate.
-     */
+     *//*
     public void setVisitDate(Date visitDate) {
         this.visitDate = visitDate;
     }

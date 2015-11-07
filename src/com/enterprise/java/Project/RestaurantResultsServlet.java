@@ -51,13 +51,13 @@ public class RestaurantResultsServlet extends HttpServlet {
         restaurantVisitSearch.setSearchType(request.getParameter("search"));
         restaurantVisitSearch.setSearchTerm(request.getParameter("lastName"));
 
-        if (type.equals("searchID")) {
-            restaurantVisitLog.SearchEmployeeID(restaurantVisitSearch);
-        }
-        else {
-            restaurantVisitLog.SearchEmployeeLastName(restaurantVisitSearch);
-
-        }
+//        if (type.equals("searchID")) {
+//            restaurantVisitLog.SearchEmployeeID(restaurantVisitSearch);
+//        }
+//        else {
+//            restaurantVisitLog.SearchEmployeeLastName(restaurantVisitSearch);
+//
+//        }
 
         //TEMP
         response.setContentType("text/html");
