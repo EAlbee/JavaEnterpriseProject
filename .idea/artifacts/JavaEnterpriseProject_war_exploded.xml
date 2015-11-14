@@ -7,6 +7,11 @@
         <element id="directory" name="classes">
           <element id="module-output" name="JavaEnterpriseProject" />
         </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="C:/tomcat/lib/mysql-connector-java-5.1.36-bin.jar" />
+          <element id="library" level="project" name="Hibernate 4.2.2-4.2.2" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/jstl-1.2.jar" />
+        </element>
       </element>
     </root>
   </artifact>

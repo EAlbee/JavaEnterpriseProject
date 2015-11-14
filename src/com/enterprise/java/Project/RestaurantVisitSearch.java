@@ -1,5 +1,6 @@
 package com.enterprise.java.Project;
 
+import java.io.*;
 import java.util.*;
 
 /**
@@ -96,5 +97,12 @@ public class RestaurantVisitSearch extends java.lang.Object{
      */
     public void addFoundRestarauntVisit(RestaurantVisit restaurantVisit) {
         results.add(restaurantVisit);
+    }
+
+    public String VisitSearchToString() {
+        int size = results.size();
+        String searchInfo = "results" + size;
+
+        return searchInfo;
     }
 }

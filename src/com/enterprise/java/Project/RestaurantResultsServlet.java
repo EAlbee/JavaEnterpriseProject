@@ -45,15 +45,15 @@ public class RestaurantResultsServlet extends HttpServlet {
 
 
 
-        restaurantVisitDao = (RestaurantVisitDao)context.getAttribute("restaurantVisitDao");
+        //restaurantVisitDao = (RestaurantVisitDao)context.getAttribute("restaurantVisitDao");
 
         //String lastName = request.getParameter("lastName");
         //String searchID = request.getParameter("searchID");
         //String searchLastName = request.getParameter("searchLastName");
 
         String type = (request.getParameter("search"));
-        restaurantVisitSearch.setSearchType(request.getParameter("search"));
-        restaurantVisitSearch.setSearchTerm(request.getParameter("lastName"));
+        //restaurantVisitSearch.setSearchType(request.getParameter("search"));
+        //restaurantVisitSearch.setSearchTerm(request.getParameter("lastName"));
 
 //        if (type.equals("searchID")) {
 //            restaurantVisitLog.SearchEmployeeID(restaurantVisitSearch);
@@ -62,23 +62,24 @@ public class RestaurantResultsServlet extends HttpServlet {
 //            restaurantVisitLog.SearchEmployeeLastName(restaurantVisitSearch);
 //
 //        }
-
-        if (type.equals("searchID")) {
-            restaurantVisitDao.SearchEmployeeID(restaurantVisitSearch);
-        }
-        else {
-            restaurantVisitDao.SearchEmployeeLastName(restaurantVisitSearch);
-
-        }
+//
+//        if (type.equals("searchID")) {
+           restaurantVisitDao.searchRestaurantVisit(restaurantVisitSearch);
+//        }
+//        else {
+            //restaurantVisitDao.SearchEmployeeLastName(restaurantVisitSearch);
+            //restaurantVisitDao.searchRestaurantVisit();
+//        }
         //TEMP
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         //String param1 = request.getParameter("firstName");
-        out.println("!!!Hey Albeeee: " + restaurantVisitSearch.getSearchTerm());
-        out.println("%%%%ALBEE" + restaurantVisitSearch.getResults());
-
-        session.setAttribute("term", restaurantVisitSearch.getSearchTerm());
-        session.setAttribute("type", restaurantVisitSearch.getSearchType());
+        out.println("!!!Hey Albeeee: " + restaurantVisitSearch.getResults());
+        //out.println("%%%%ALBEE" + restaurantVisitDao.searchRestaurantVisit(restaurantVisitSearch));
+        out.println("Results" + restaurantVisitSearch.VisitSearchToString());
+//        session.setAttribute("term", restaurantVisitSearch.getSearchTerm());
+//        session.setAttribute("type", restaurantVisitSearch.getSearchType());
+        session.setAttribute("term", "ERIC");
         session.setAttribute("results", restaurantVisitSearch.getResults());
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/RestaurantVisitSearchResults.jsp");

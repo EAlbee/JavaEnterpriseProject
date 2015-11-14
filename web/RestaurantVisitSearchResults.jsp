@@ -5,6 +5,7 @@
   Time: 9:30 PM
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,7 +13,7 @@
 </head>
 <body>
 <h2>Restaurant Search  <!--c:import url="/jsp/EmployeeSearchResultsFooter.jsp" /--></h2>
-<h3>${type} Results for: ${term}</h3>
+<!--<h3>{type} Results for: {term}</h3>-->
 
 <table >
   <tr bgcolor="green">
@@ -29,23 +30,15 @@
     <td>Room#</td>
     <td>&nbsp;&nbsp;</td>
     <td>Phone#</td>
+    <td>{term}</td>
   </tr>
   <c:forEach var="employee" items="${results}">
     <tr>
 
-      <td>${employee.getEmployeeID()}</td>
+      <td>${employee.getId()}</td>
       <td>&nbsp;&nbsp;</td>
-      <td>${employee.getEmployeeLastName()}</td>
+      <td>${employee.getVisitRestaurantName()}</td>
       <td>&nbsp;&nbsp;</td>
-      <td>${employee.getEmployeeFirstName()}</td>
-      <td>&nbsp;&nbsp;</td>
-      <td>${employee.getEmployeeSSN()}</td>
-      <td>&nbsp;&nbsp;</td>
-      <td>${employee.getEmployeeDepartment()}</td>
-      <td>&nbsp;&nbsp;</td>
-      <td>${employee.getEmployeeRoomNumber()}</td>
-      <td>&nbsp;&nbsp;</td>
-      <td>${employee.getEmployeePhoneNumber()}</td>
 
 
     </tr>

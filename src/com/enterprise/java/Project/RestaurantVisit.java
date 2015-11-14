@@ -44,6 +44,7 @@ public class RestaurantVisit {
      * Returns the value of id
      */
     public int getId() {
+
         return id;
     }
 
@@ -68,6 +69,7 @@ public class RestaurantVisit {
      * @param visitRestaurantName The value to assign visitRestaurantName.
      */
     public void setVisitRestaurantName(String visitRestaurantName) {
+
         this.visitRestaurantName = visitRestaurantName;
     }
 
@@ -85,6 +87,7 @@ public class RestaurantVisit {
      * @param visitLocationCity The value to assign visitLocationCity.
      */
     public void setVisitLocationCity(String visitLocationCity) {
+
         this.visitLocationCity = visitLocationCity;
     }
 
@@ -93,6 +96,7 @@ public class RestaurantVisit {
      * Returns the value of visitLocationState.
      */
     public String getVisitLocationState() {
+
         return visitLocationState;
     }
 
@@ -102,6 +106,7 @@ public class RestaurantVisit {
      * @param visitLocationState The value to assign visitLocationState.
      */
     public void setVisitLocationState(String visitLocationState) {
+
         this.visitLocationState = visitLocationState;
     }
 
@@ -127,6 +132,7 @@ public class RestaurantVisit {
      * Returns the value of visitItem.
      */
     public String getVisitItem() {
+
         return visitItem;
     }
 
@@ -136,6 +142,7 @@ public class RestaurantVisit {
      * @param visitItem The value to assign visitItem.
      */
     public void setVisitItem(String visitItem) {
+
         this.visitItem = visitItem;
     }
 
@@ -144,6 +151,7 @@ public class RestaurantVisit {
      * Returns the value of visitDescription.
      */
     public String getVisitDescription() {
+
         return visitDescription;
     }
 
@@ -153,6 +161,7 @@ public class RestaurantVisit {
      * @param visitDescription The value to assign visitDescription.
      */
     public void setVisitDescription(String visitDescription) {
+
         this.visitDescription = visitDescription;
     }
 
