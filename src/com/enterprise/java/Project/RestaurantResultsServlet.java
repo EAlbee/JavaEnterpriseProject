@@ -6,7 +6,7 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
-
+import org.apache.log4j.Logger;
 
 /**
  * Created by Student on 10/31/2015.
@@ -17,7 +17,8 @@ import javax.servlet.annotation.*;
         urlPatterns = { "/RestaurantVisitSearchResults" }
 )
 public class RestaurantResultsServlet extends HttpServlet {
-
+    //LOGGER
+    private final Logger logger = Logger.getLogger(RestaurantResultsServlet.class);
     /**
      *  Handles HTTP GET requests.
      *
@@ -28,7 +29,8 @@ public class RestaurantResultsServlet extends HttpServlet {
      */
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        logger.info("**************************************************************************");
+        logger.info("RestaurantResultsServlet doGet");
         RestaurantVisitSearch restaurantVisitSearch = new RestaurantVisitSearch();
         ServletContext context = getServletContext();
         HttpSession session = request.getSession();
@@ -74,9 +76,9 @@ public class RestaurantResultsServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         //String param1 = request.getParameter("firstName");
-        out.println("!!!Hey Albeeee: " + restaurantVisitSearch.getResults());
+        logger.info("!!!Hey Albeeee: " + restaurantVisitSearch.getResults());
         //out.println("%%%%ALBEE" + restaurantVisitDao.searchRestaurantVisit(restaurantVisitSearch));
-        out.println("Results" + restaurantVisitSearch.VisitSearchToString());
+        logger.info("Results" + restaurantVisitSearch.VisitSearchToString());
 //        session.setAttribute("term", restaurantVisitSearch.getSearchTerm());
 //        session.setAttribute("type", restaurantVisitSearch.getSearchType());
         session.setAttribute("term", "ERIC");

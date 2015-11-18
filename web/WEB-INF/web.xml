@@ -14,7 +14,7 @@
             <url-pattern>/RestaurantVisitSearchContent.jsp</url-pattern>
         </web-resource-collection>
         <auth-constraint>
-            <role-name>administrator</role-name>
+            <role-name>admin</role-name>
         </auth-constraint>
     </security-constraint>
 

@@ -20,12 +20,13 @@ import org.hibernate.Transaction;
  * Created by Student on 11/7/2015.
  */
 public class RestaurantVisitDao {
-
+    //LOGGER logger
     private final Logger logger = Logger.getLogger(RestaurantVisitDao.class);
 
+    //ADD
     /* Method to CREATE a new RestaurantVisit in the database */
     public Integer addRestaurantVisit(RestaurantVisit restaurantVisit) {
-        logger.debug("addRestaurantVisit in Dao");
+        logger.info("addRestaurantVisit in Dao");
 
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
@@ -44,9 +45,10 @@ public class RestaurantVisitDao {
         return restaurantVisitID;
     }
 
+    //SEARCH
     public void searchRestaurantVisit(RestaurantVisitSearch restaurantVisitSearch) {
-        logger.debug("searchRestaurantVisit");
-        logger.info("INFO log");
+        logger.info("searchRestaurantVisit in dao");
+        logger.debug("test DEBUG log");
         //TODO update to return a list
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
@@ -74,6 +76,9 @@ public class RestaurantVisitDao {
             session.close();
 
         }
-
+        /*Try block complete */
     }
+
+    //UPDATE
+
 }

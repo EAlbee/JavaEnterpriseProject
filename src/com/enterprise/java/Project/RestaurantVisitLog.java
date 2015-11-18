@@ -9,4 +9,8 @@ import java.util.*;
  * @author EAlbee
  */
 public class RestaurantVisitLog {
+
+    //TODO
+    //Class no longer needed
+    //The RestaurantVisitDao is replacing this class
 }

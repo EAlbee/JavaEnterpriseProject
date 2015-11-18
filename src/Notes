@@ -1,3 +1,5 @@
+user_roles and restaurant_visit_temp need id INT for Hibernate.
+
 ALTER TABLE sample.users ADD id INT NOT NULL PRIMARY KEY AUTO_INCREMENT;
 
 create table users (

@@ -5,11 +5,13 @@ import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
+import org.apache.log4j.Logger;
 /**
  * Created by Student on 10/30/2015.
  */
 public class RestaurantSearchServlet extends HttpServlet {
-
+    //LOGGER
+    private final Logger logger = Logger.getLogger(RestaurantResultsServlet.class);
     /**
      *  Handles HTTP GET requests.
      *
@@ -21,6 +23,7 @@ public class RestaurantSearchServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        logger.debug("RestaurantSearchServlet doGet");
         String url = "/RestaurantVisitSearchContent.jsp";
         RequestDispatcher dispatcher =
                 getServletContext().getRequestDispatcher(url);
