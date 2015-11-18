@@ -4,6 +4,9 @@ package com.enterprise.java.Project.persistence;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
+//import java.util.logging.Logger;
+import org.apache.log4j.Logger;
+
 import com.enterprise.java.Project.RestaurantVisit;
 import com.enterprise.java.Project.RestaurantVisitSearch;
 import org.hibernate.HibernateException;
@@ -18,8 +21,11 @@ import org.hibernate.Transaction;
  */
 public class RestaurantVisitDao {
 
+    private final Logger logger = Logger.getLogger(RestaurantVisitDao.class);
+
     /* Method to CREATE a new RestaurantVisit in the database */
     public Integer addRestaurantVisit(RestaurantVisit restaurantVisit) {
+        logger.debug("addRestaurantVisit in Dao");
 
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
@@ -30,7 +36,8 @@ public class RestaurantVisitDao {
             tx.commit();
         } catch (HibernateException e) {
             if (tx!=null) tx.rollback();
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("!!! addRestaurantVisit error", e);
         } finally {
             session.close();
         }
@@ -38,6 +45,8 @@ public class RestaurantVisitDao {
     }
 
     public void searchRestaurantVisit(RestaurantVisitSearch restaurantVisitSearch) {
+        logger.debug("searchRestaurantVisit");
+        logger.info("INFO log");
         //TODO update to return a list
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         Transaction tx = null;
@@ -59,7 +68,8 @@ public class RestaurantVisitDao {
             tx.commit();
         } catch (HibernateException e) {
             if (tx!=null) tx.rollback();
-            e.printStackTrace();
+            //e.printStackTrace();
+            logger.error("!!! searchRestaurantVisit error",e);
         } finally {
             session.close();
 
