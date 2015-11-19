@@ -1,6 +1,6 @@
 package com.enterprise.java.Project.persistence;
 
-
+import java.lang.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
@@ -9,11 +9,10 @@ import org.apache.log4j.Logger;
 
 import com.enterprise.java.Project.RestaurantVisit;
 import com.enterprise.java.Project.RestaurantVisitSearch;
-import org.hibernate.HibernateException;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-
+import org.hibernate.*;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
 
 
 /**
@@ -46,38 +45,46 @@ public class RestaurantVisitDao {
     }
 
     //SEARCH
-    public void searchRestaurantVisit(RestaurantVisitSearch restaurantVisitSearch) {
-        logger.info("searchRestaurantVisit in dao");
+    public void searchRestaurantName(RestaurantVisitSearch restaurantVisitSearch) {
+        logger.info("searchRestaurantName in dao");
         logger.debug("test DEBUG log");
         //TODO update to return a list
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
-        Transaction tx = null;
-        String hql = "FROM com.enterprise.java.Project.RestaurantVisit";
-        //List restaurantVisits = null;
-
+        //Transaction tx = null;
+        //String hql = "FROM com.enterprise.java.Project.RestaurantVisit R " +
+        //         " WHERE R.visitRestaurantName like :restaurantName";
+        //String hql = "FROM RestaurantVisit r where r.restaurant_name like :restaurantName";
+        //List restaurantVisits = null;     com.enterprise.java.Project.
+        Criteria criteria = session.createCriteria(RestaurantVisit.class);
+        criteria.add(Restrictions.like("visitRestaurantName", restaurantVisitSearch.getSearchTerm(), MatchMode.ANYWHERE));
         try {
-            tx = session.beginTransaction();
-            List<RestaurantVisit> restaurantVisits = session.createQuery("FROM com.enterprise.java.Project.RestaurantVisit").list();
+            //tx = session.beginTransaction();
+            //List<RestaurantVisit> restaurantVisits = session.createQuery("FROM com.enterprise.java.Project.RestaurantVisit").list();
             //ArrayList<RestaurantVisit> restaurantVisits = new ArrayList<RestaurantVisit>();
-            Query query = session.createQuery(hql);
-            restaurantVisits = query.list();
-            for (Iterator iterator =
-                    restaurantVisits.iterator(); iterator.hasNext();){
-                RestaurantVisit restaurantVisit = (RestaurantVisit) iterator.next();
 
-            }
+            List<RestaurantVisit> restaurantVisits = null;
+            //query = session.createQuery("FROM com.enterprise.java.Project.RestaurantVisit WHERE restaurant_name =:name").list();
+            //Query query = session.createQuery(hql);
+            //query.setParameter("restaurantName", restaurantVisitSearch.getSearchTerm());
+            restaurantVisits = criteria.list();
+            //restaurantVisits = query.list();
+            //for (Iterator iterator =
+            //        restaurantVisits.iterator(); iterator.hasNext();){
+            //    RestaurantVisit restaurantVisit = (RestaurantVisit) iterator.next();
+
+            //}
             restaurantVisitSearch.setResults((ArrayList<RestaurantVisit>) restaurantVisits);
-            tx.commit();
+            //tx.commit();
         } catch (HibernateException e) {
-            if (tx!=null) tx.rollback();
-            //e.printStackTrace();
-            logger.error("!!! searchRestaurantVisit error",e);
+            logger.error("!!! searchRestaurantName error",e);
         } finally {
             session.close();
 
         }
         /*Try block complete */
     }
+
+
 
     //UPDATE
 

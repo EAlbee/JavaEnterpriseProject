@@ -54,19 +54,18 @@ public class RestaurantResultsServlet extends HttpServlet {
         //String searchLastName = request.getParameter("searchLastName");
 
         String type = (request.getParameter("search"));
-        //restaurantVisitSearch.setSearchType(request.getParameter("search"));
-        //restaurantVisitSearch.setSearchTerm(request.getParameter("lastName"));
+        restaurantVisitSearch.setSearchType(request.getParameter(type));
+        restaurantVisitSearch.setSearchTerm(request.getParameter("searchValue"));
 
-//        if (type.equals("searchID")) {
-//            restaurantVisitLog.SearchEmployeeID(restaurantVisitSearch);
+//        if (type.equals("searchFoodItem")) {
+//            restaurantVisitDao.SearchEmployeeID(restaurantVisitSearch);
 //        }
-//        else {
-//            restaurantVisitLog.SearchEmployeeLastName(restaurantVisitSearch);
-//
+//        else if (type.equals("searchName") {
+            restaurantVisitDao.searchRestaurantName(restaurantVisitSearch);
 //        }
 //
 //        if (type.equals("searchID")) {
-           restaurantVisitDao.searchRestaurantVisit(restaurantVisitSearch);
+//           restaurantVisitDao.searchRestaurantVisit(restaurantVisitSearch);
 //        }
 //        else {
             //restaurantVisitDao.SearchEmployeeLastName(restaurantVisitSearch);
@@ -76,7 +75,7 @@ public class RestaurantResultsServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         //String param1 = request.getParameter("firstName");
-        logger.info("!!!Hey Albeeee: " + restaurantVisitSearch.getResults());
+        logger.info("***Hey Albeeee: " + restaurantVisitSearch.getResults());
         //out.println("%%%%ALBEE" + restaurantVisitDao.searchRestaurantVisit(restaurantVisitSearch));
         logger.info("Results" + restaurantVisitSearch.VisitSearchToString());
 //        session.setAttribute("term", restaurantVisitSearch.getSearchTerm());

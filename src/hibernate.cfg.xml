@@ -16,6 +16,7 @@
         <property name="connection.password">
             student
         </property>
+        <property name="show_sql">true</property>
         <mapping resource="RestaurantVisit.hbm.xml" />
         <mapping class="com.enterprise.java.Project.RestaurantVisit" />
     </session-factory>
