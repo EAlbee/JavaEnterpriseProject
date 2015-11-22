@@ -12,7 +12,7 @@
   </head>
   <body>
   <ul>
-    <li><a href="RestaurantVisitSearchContent.jsp">EAlbee Restaraunt Tracker</a></li>
+    <li><a href="RestaurantVisitSearchAndResults.jsp">EAlbee Restaraunt Tracker</a></li>
     <li><a href="display.jsp">Take me to the Display Page</a></li>
   </ul>
   </body>

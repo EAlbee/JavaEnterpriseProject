@@ -44,7 +44,7 @@ public class RestaurantVisitDao {
         return restaurantVisitID;
     }
 
-    //SEARCH
+    //SEARCH Name
     public void searchRestaurantName(RestaurantVisitSearch restaurantVisitSearch) {
         logger.info("searchRestaurantName in dao");
         logger.debug("test DEBUG log");
@@ -84,7 +84,55 @@ public class RestaurantVisitDao {
         /*Try block complete */
     }
 
+    //SEARCH Name
+    public void searchFoodItem(RestaurantVisitSearch restaurantVisitSearch) {
+        logger.info("searchFoodItem in dao");
 
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+
+        Criteria criteria = session.createCriteria(RestaurantVisit.class);
+        criteria.add(Restrictions.like("visitItem", restaurantVisitSearch.getSearchTerm(), MatchMode.ANYWHERE));
+        try {
+
+            List<RestaurantVisit> restaurantVisits = null;
+            restaurantVisits = criteria.list();
+            restaurantVisitSearch.setResults((ArrayList<RestaurantVisit>) restaurantVisits);
+
+        } catch (HibernateException e) {
+            logger.error("!!! searchRestaurantName error",e);
+        } finally {
+            session.close();
+
+        }
+        /*Try block complete */
+    }
+
+
+    //SEARCH Name
+    public void searchRecent(RestaurantVisitSearch restaurantVisitSearch) {
+        logger.info("searchFoodItem in dao");
+
+        Session session = SessionFactoryProvider.getSessionFactory().openSession();
+
+        int numberOfRecent = 10;
+
+        Criteria criteria = session.createCriteria(RestaurantVisit.class);
+        criteria.setMaxResults(numberOfRecent);
+        criteria.add(Restrictions.like("visitItem", restaurantVisitSearch.getSearchTerm(), MatchMode.ANYWHERE));
+        try {
+
+            List<RestaurantVisit> restaurantVisits = null;
+            restaurantVisits = criteria.list();
+            restaurantVisitSearch.setResults((ArrayList<RestaurantVisit>) restaurantVisits);
+
+        } catch (HibernateException e) {
+            logger.error("!!! searchRestaurantName error",e);
+        } finally {
+            session.close();
+
+        }
+        /*Try block complete */
+    }
 
     //UPDATE
 

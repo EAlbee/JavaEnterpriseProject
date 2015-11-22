@@ -11,7 +11,7 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>Search</web-resource-name>
-            <url-pattern>/RestaurantVisitSearchContent.jsp</url-pattern>
+            <url-pattern>/RestaurantVisitSearchAndResults.jsp</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>admin</role-name>

@@ -57,12 +57,12 @@ public class RestaurantResultsServlet extends HttpServlet {
         restaurantVisitSearch.setSearchType(request.getParameter(type));
         restaurantVisitSearch.setSearchTerm(request.getParameter("searchValue"));
 
-//        if (type.equals("searchFoodItem")) {
-//            restaurantVisitDao.SearchEmployeeID(restaurantVisitSearch);
-//        }
-//        else if (type.equals("searchName") {
+        if (type.equals("searchFoodItem")) {
+            restaurantVisitDao.searchFoodItem(restaurantVisitSearch);
+        }
+        else if (type.equals("searchName")) {
             restaurantVisitDao.searchRestaurantName(restaurantVisitSearch);
-//        }
+       }
 //
 //        if (type.equals("searchID")) {
 //           restaurantVisitDao.searchRestaurantVisit(restaurantVisitSearch);
@@ -83,7 +83,8 @@ public class RestaurantResultsServlet extends HttpServlet {
         session.setAttribute("term", "ERIC");
         session.setAttribute("results", restaurantVisitSearch.getResults());
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/RestaurantVisitSearchResults.jsp");
+        //RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/RestaurantVisitSearchResults.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/RestaurantVisitSearchAndResults.jsp");
         dispatcher.forward(request, response);
     }
 }
