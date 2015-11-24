@@ -24,7 +24,7 @@ public class RestaurantSearchServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        logger.debug("RestaurantSearchServlet doGet");
+        logger.info("RestaurantSearchServlet doGet");
         //String url = "/RestaurantVisitSearchContent.jsp";
         String url = "/RestaurantVisitSearchAndResults.jsp";
         RequestDispatcher dispatcher =

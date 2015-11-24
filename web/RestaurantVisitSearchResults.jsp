@@ -19,17 +19,17 @@
   <tr bgcolor="green">
     <td>ID</td>
     <td>&nbsp;&nbsp;</td>
-    <td>Last</td>
+    <td>Name</td>
     <td>&nbsp;&nbsp;</td>
-    <td>First</td>
+    <td>item</td>
     <td>&nbsp;&nbsp;</td>
-    <td>SSN</td>
+    <td>cost</td>
     <td>&nbsp;&nbsp;</td>
-    <td>Dept</td>
+    <td>date</td>
     <td>&nbsp;&nbsp;</td>
-    <td>Room#</td>
+    <td>tip</td>
     <td>&nbsp;&nbsp;</td>
-    <td>Phone#</td>
+    <td>Total</td>
     <td>{term}</td>
   </tr>
   <c:forEach var="employee" items="${results}">
