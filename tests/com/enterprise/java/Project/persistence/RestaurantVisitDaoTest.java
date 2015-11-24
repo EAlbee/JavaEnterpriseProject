@@ -5,6 +5,7 @@ import com.enterprise.java.Project.RestaurantVisitSearch;
 import java.util.*;
 import static org.junit.Assert.*;
 import org.junit.Test;
+import java.util.List;
 
 
 /**
@@ -28,13 +29,29 @@ public class RestaurantVisitDaoTest {
 
     }
 
+//    @Test
+//    public void testSearchRestaurantVisit() throws Exception {
+//        //RestaurantVisitDao dao = new RestaurantVisitDao();
+//        RestaurantVisitSearch restaurantVisitSearch = new RestaurantVisitSearch();
+//        //dao.searchRestaurantVisit(restaurantVisitSearch);
+//        int resultsSize = restaurantVisitSearch.getResults().size();
+//        assertTrue(resultsSize >= 2);
+//
+//    }
     @Test
-    public void testSearchRestaurantVisit() throws Exception {
-        //RestaurantVisitDao dao = new RestaurantVisitDao();
+    public void testSearchRestaurantName() throws Exception {
         RestaurantVisitSearch restaurantVisitSearch = new RestaurantVisitSearch();
-        //dao.searchRestaurantVisit(restaurantVisitSearch);
-        int resultsSize = restaurantVisitSearch.getResults().size();
-        assertTrue(resultsSize >= 2);
+        RestaurantVisitDao dao = new RestaurantVisitDao();
+
+        restaurantVisitSearch.setSearchTerm("steak");
+        restaurantVisitSearch.setSearchType("searchFoodItem");
+
+        dao.searchFoodItem(restaurantVisitSearch);
+
+        List <RestaurantVisit> results = restaurantVisitSearch.getResults();
+        RestaurantVisit visit = results.get(0);
+        String name = visit.getVisitRestaurantName();
+        assertEquals(name, "The Tornado Room");
 
     }
 }
