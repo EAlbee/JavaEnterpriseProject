@@ -5,7 +5,8 @@
   Time: 9:30 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -63,7 +64,7 @@
 
   <input type="text" name="name" value="" autofocus/>
   <input type="text" name="foodItem" value="" autofocus/>
-  <input type="number" name="cost" value="" autofocus/>
+  <input type="text" name="cost" value="" autofocus/>
   <input type="submit" name="" value="Add" />
 
   </form>

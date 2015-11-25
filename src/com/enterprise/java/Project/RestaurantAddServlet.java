@@ -7,6 +7,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import org.apache.log4j.Logger;
+import java.math.*;
 
 
 /**
@@ -40,7 +41,7 @@ public class RestaurantAddServlet extends HttpServlet {
 
         restaurantVisit.setVisitRestaurantName(request.getParameter("name"));
         restaurantVisit.setVisitItem(request.getParameter("foodItem"));
-        //restaurantVisit.setVisitTotalCost(request.getParameter("cost"));
+        restaurantVisit.setVisitTotalCost(new Double(request.getParameter("cost")));
 
         restaurantVisitDao.addRestaurantVisit(restaurantVisit);
 
@@ -54,6 +55,7 @@ public class RestaurantAddServlet extends HttpServlet {
         //session.setAttribute("term", "ERIC");
         session.setAttribute("name", restaurantVisit.getVisitRestaurantName());
         session.setAttribute("foodItem", restaurantVisit.getVisitItem());
+        session.setAttribute("cost", restaurantVisit.getVisitTotalCost());
 
         //RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/RestaurantVisitSearchResults.jsp");
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/RestaurantVisitSearchAndResults.jsp");
