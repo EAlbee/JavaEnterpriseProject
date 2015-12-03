@@ -15,5 +15,6 @@
         <!--property name="visitDate" column="date" type="date"/-->
         <property name="visitItem" column="item" type="string"/>
         <property name="visitTotalCost" column="cost" type="double"/>
+        <property name="visitDate" column="date" type="date"/>
     </class>
 </hibernate-mapping>

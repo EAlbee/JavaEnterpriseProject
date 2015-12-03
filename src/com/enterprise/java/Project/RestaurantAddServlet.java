@@ -8,6 +8,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import org.apache.log4j.Logger;
 import java.math.*;
+import java.util.Date;
 
 
 /**
@@ -42,6 +43,7 @@ public class RestaurantAddServlet extends HttpServlet {
         restaurantVisit.setVisitRestaurantName(request.getParameter("name"));
         restaurantVisit.setVisitItem(request.getParameter("foodItem"));
         restaurantVisit.setVisitTotalCost(new Double(request.getParameter("cost")));
+        //restaurantVisit.setVisitDate(request.getParameter("date"));
 
         restaurantVisitDao.addRestaurantVisit(restaurantVisit);
 
@@ -56,6 +58,7 @@ public class RestaurantAddServlet extends HttpServlet {
         session.setAttribute("name", restaurantVisit.getVisitRestaurantName());
         session.setAttribute("foodItem", restaurantVisit.getVisitItem());
         session.setAttribute("cost", restaurantVisit.getVisitTotalCost());
+        session.setAttribute("date", restaurantVisit.getVisitDate());
 
         //RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/RestaurantVisitSearchResults.jsp");
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/RestaurantVisitSearchAndResults.jsp");

@@ -8,29 +8,47 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<html lang="en">
 <head>
-  <title></title>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="_css/datepicker.css">
+  <link rel="stylesheet" href="_css/bootstrap.css">
+  <link rel="stylesheet" href="_css/bootstrap-responsive.css">
+  <script type="text/javascript" src="datepicker/bootstrap-datepicker.js"></script>
+  <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+  <!-- Bootstrap -->
+  <link href = "bootstrap/css/bootstrap.min.css" rel = "stylesheet">
 </head>
 <>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src = "https://code.jquery.com/jquery.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src = "bootstrap/js/bootstrap.min.js"></script>
+
 <h2>Restaurant Search  <!--c:import url="/jsp/EmployeeSearchResultsFooter.jsp" /--></h2>
 <!--<h3>{type} Results for: {term}</h3>-->
-
-<table >
-  <tr bgcolor="#f5f5f5">
-    <td>ID</td>
-    <td>&nbsp;&nbsp;</td>
-    <td>Name</td>
-    <td>&nbsp;&nbsp;</td>
-    <td>Item</td>
-    <td>&nbsp;&nbsp;</td>
-    <td>Cost</td>
-    <td>&nbsp;&nbsp;</td>
-    <td>tip</td>
-    <td>&nbsp;&nbsp;</td>
-    <td>date#</td>
-    <td>&nbsp;&nbsp;</td>
+<body>
+<table class = "table table-striped">
+  <thead>
+  <tr bgcolor="#6495ED">
+    <th>ID</th>
+    <th>&nbsp;&nbsp;</th>
+    <th>Name</th>
+    <th>&nbsp;&nbsp;</th>
+    <th>Item</th>
+    <th>&nbsp;&nbsp;</th>
+    <th>Cost</th>
+    <th>&nbsp;&nbsp;</th>
+    <th>tip</th>
+    <th>&nbsp;&nbsp;</th>
+    <th>date#</th>
+    <th>&nbsp;&nbsp;</th>
   </tr>
+  </thead>
   <c:forEach var="restaurant" items="${results}">
     <tr>
 
@@ -46,28 +64,43 @@
     </tr>
   </c:forEach>
 </table>
-  <form method="GET" action="RestaurantVisitSearchResults" />
+<form method="GET" action="RestaurantVisitSearchResults" />
 
+<div class = "form-group">
 
-  <label for"FoodItem   ">FoodItem</label>
-  <input type="radio" name="search" id="FoodItem" value="searchFoodItem" checked="checked" /><br>
-  <label for"RestaurantName">Restaurant Name</label>
-  <input type="radio" name="search" id= "RestaurantName" value="searchName" /><br>
-  <label for"searchValue">search</label>
+  <label for"searchValue">  search for</label>
   <input type="text" name="searchValue" value="" autofocus/>
-  <input type="submit" name="" value="Search" />
 
-  </form>
+  <div class = "checkbox-inline">
+    <!--label for"FoodItem   ">FoodItem</label-->
+    <input type="radio" name="search" id="FoodItem" value="searchFoodItem" checked="checked" /> FoodItem
+  </div>
+  <div class = "checkbox-inline">
+    <!--label for"RestaurantName">Restaurant Name</label-->
+    <input type="radio" name="search" id= "RestaurantName" value="searchName" /> RestaurantName
+  </div>
 
-  <form method="GET" action="RestaurantVisitAddResults" />
+  <div class = "checkbox-inline">
+    <button type = "submit" class = "btn btn-default" value="Search">Search</button>
+  </div>
+
+</div>
+
+<!--input type="submit" name="" value="Search" /-->
 
 
-  <input type="text" name="name" value="" autofocus/>
-  <input type="text" name="foodItem" value="" autofocus/>
-  <input type="text" name="cost" value="" autofocus/>
-  <input type="submit" name="" value="Add" />
+</form>
 
-  </form>
+<form method="GET" action="RestaurantVisitAddResults" />
+
+
+<input type="text" name="name" value="" autofocus/>
+<input type="text" name="foodItem" value="" autofocus/>
+<input type="text" name="cost" value="" autofocus/>
+
+<input type="submit" name="" value="Add" />
+
+</form>
 
 </body>
 </html>

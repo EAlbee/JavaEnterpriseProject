@@ -14,7 +14,7 @@ public class RestaurantVisit {
     private String visitRestaurantName;
     private String visitLocationCity;
     private String visitLocationState;
-    //private Date visitDate;
+    private Date visitDate;
     private String visitItem;
     private String visitDescription;
     private Double visitBillAmount;
@@ -113,16 +113,16 @@ public class RestaurantVisit {
 
     /**
      * Returns the value of visitDate.
-     *//*
+     */
     public Date getVisitDate() {
         return visitDate;
     }
 
 
-    *//**
+    /**
      * Sets the value of visitDate.
      * @param visitDate The value to assign visitDate.
-     *//*
+     */
     public void setVisitDate(Date visitDate) {
         this.visitDate = visitDate;
     }
