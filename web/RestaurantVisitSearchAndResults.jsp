@@ -14,17 +14,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="_css/datepicker.css">
-  <link rel="stylesheet" href="_css/bootstrap.css">
-  <link rel="stylesheet" href="_css/bootstrap-responsive.css">
-  <script type="text/javascript" src="datepicker/bootstrap-datepicker.js"></script>
+
   <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
   <!-- Bootstrap -->
   <link href = "bootstrap/css/bootstrap.min.css" rel = "stylesheet">
+  <!--datepicker-->
+  <!-- Include Required Prerequisites -->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <link href="bootstrap/css/jquery-ui.min.css" rel="stylesheet">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
 </head>
 <>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src = "https://code.jquery.com/jquery.js"></script>
+<!--script src = "https://code.jquery.com/jquery.js"></script-->
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src = "bootstrap/js/bootstrap.min.js"></script>
@@ -97,6 +102,21 @@
 <input type="text" name="name" value="" autofocus/>
 <input type="text" name="foodItem" value="" autofocus/>
 <input type="text" name="cost" value="" autofocus/>
+
+<div class="contain">
+<div class="form-group">
+  <input type="text" class="form-control" name="date" value="" id="dp" background-color=#ffg/>
+</div>
+</div>
+<script>
+
+    $( "#dp" ).datepicker({
+    changeMonth: true,
+    changeYear: true
+  });
+
+</script>
+
 
 <input type="submit" name="" value="Add" />
 

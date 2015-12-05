@@ -43,7 +43,7 @@ public class RestaurantAddServlet extends HttpServlet {
         restaurantVisit.setVisitRestaurantName(request.getParameter("name"));
         restaurantVisit.setVisitItem(request.getParameter("foodItem"));
         restaurantVisit.setVisitTotalCost(new Double(request.getParameter("cost")));
-        //restaurantVisit.setVisitDate(request.getParameter("date"));
+        restaurantVisit.setVisitDate((java.sql.Date) new Date(request.getParameter("date")));
 
         restaurantVisitDao.addRestaurantVisit(restaurantVisit);
 
