@@ -1,7 +1,11 @@
 package com.enterprise.java.Project;
 
 import java.io.*;
-import java.sql.*;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by Student on 10/31/2015.
@@ -14,7 +18,7 @@ public class RestaurantVisit {
     private String visitRestaurantName;
     private String visitLocationCity;
     private String visitLocationState;
-    private Date visitDate;
+    private Calendar visitDate;
     private String visitItem;
     private String visitDescription;
     private Double visitBillAmount;
@@ -26,12 +30,13 @@ public class RestaurantVisit {
 
     }
 
-    public RestaurantVisit(int id, String name, String city, String state, String item, String description,
+    public RestaurantVisit(int id, String name, String city, String state, Calendar date, String item, String description,
                     double bill, double tip, double cost, int rating) {
         this.id = id;
         this.visitRestaurantName = name;
         this.visitLocationCity = city;
         this.visitLocationState = state;
+        this.visitDate = date;
         this.visitItem = item;
         this.visitDescription = description;
         this.visitBillAmount = bill;
@@ -114,7 +119,15 @@ public class RestaurantVisit {
     /**
      * Returns the value of visitDate.
      */
-    public Date getVisitDate() {
+    public Calendar getVisitDate() {
+        String strdate = null;
+
+        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+
+        if (visitDate != null) {
+            strdate = sdf.format(visitDate.getTime());
+        }
+
         return visitDate;
     }
 
@@ -123,10 +136,19 @@ public class RestaurantVisit {
      * Sets the value of visitDate.
      * @param visitDate The value to assign visitDate.
      */
-    public void setVisitDate(Date visitDate) {
-        this.visitDate = visitDate;
+    public void setVisitDate(String visitDate) throws ParseException {
+        SimpleDateFormat curFormater = new SimpleDateFormat("MM/dd/yyyy");
+        //Date dateObj = curFormater.parse(visitDate)
+        //this.visitDate = visitDate.setDate(vistiDate);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(curFormater.parse(visitDate));
+        this.visitDate = calendar;
+        //this.visitDate = visitDate;
     }
 
+    public void setVisitDate(Calendar visitDate) throws ParseException {
+        this.visitDate = visitDate;
+    }
 
     /**
      * Returns the value of visitItem.

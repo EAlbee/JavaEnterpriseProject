@@ -8,7 +8,11 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import org.apache.log4j.Logger;
 import java.math.*;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.util.Date;
+import java.util.Calendar;
+import java.sql.*;
 
 
 /**
@@ -43,7 +47,15 @@ public class RestaurantAddServlet extends HttpServlet {
         restaurantVisit.setVisitRestaurantName(request.getParameter("name"));
         restaurantVisit.setVisitItem(request.getParameter("foodItem"));
         restaurantVisit.setVisitTotalCost(new Double(request.getParameter("cost")));
-        restaurantVisit.setVisitDate((java.sql.Date) new Date(request.getParameter("date")));
+        //restaurantVisit.setVisitDate((java.sql.Date) new Date(request.getParameter("date")));
+        try {
+            logger.info(request.getParameter("date"));
+            restaurantVisit.setVisitDate(request.getParameter("date"));
+        } catch (ParseException e) {
+            logger.error("date error", e);
+        }
+        logger.info(restaurantVisit.getVisitDate());
+        //restaurantVisit.setVisitDate();
 
         restaurantVisitDao.addRestaurantVisit(restaurantVisit);
 

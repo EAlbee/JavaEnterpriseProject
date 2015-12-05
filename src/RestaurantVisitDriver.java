@@ -16,7 +16,7 @@ public class RestaurantVisitDriver {
     public static void main(String[] args) {
         RestaurantVisitDao dao = new RestaurantVisitDao();
         RestaurantVisit restaurantVisit = new RestaurantVisit(0, "The Tornado Room", "Madison", "WI",
-                "Steak", "Desc", 20.00, 5.00, 25.00, 5);
+                null, "Steak", "Desc", 20.00, 5.00, 25.00, 5);
         //UserRole userRole = new UserRole(0, "admin", "admin");
         dao.addRestaurantVisit(restaurantVisit);
     }

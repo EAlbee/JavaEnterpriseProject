@@ -65,6 +65,9 @@
       <td>&nbsp;&nbsp;</td>
       <td>${restaurant.getVisitTotalCost()}</td>
       <td>&nbsp;&nbsp;</td>
+      <td>${restaurant.getVisitDate().time}</td>
+      <td>&nbsp;&nbsp;</td>
+
 
     </tr>
   </c:forEach>
@@ -105,7 +108,7 @@
 
 <div class="contain">
 <div class="form-group">
-  <input type="text" class="form-control" name="date" value="" id="dp" background-color=#ffg/>
+  <input type="Date" class="form-control" name="date" value="12/05/2015" id="dp" background-color=#ffg/>
 </div>
 </div>
 <script>
