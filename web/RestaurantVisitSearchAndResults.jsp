@@ -25,9 +25,10 @@
   <link href="bootstrap/css/jquery-ui.min.css" rel="stylesheet">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link href="boostrap/css/Custom.css" rel="stylesheet">
 
 </head>
-<>
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <!--script src = "https://code.jquery.com/jquery.js"></script-->
 
@@ -72,12 +73,16 @@
     </tr>
   </c:forEach>
 </table>
+
+<!-- ****** -->
+<!-- SEARCH -->
+<!-- ****** -->
 <form method="GET" action="RestaurantVisitSearchResults" />
 
 <div class = "form-group">
 
-  <label for"searchValue">  search for</label>
-  <input type="text" name="searchValue" value="" autofocus/>
+  <label for="searchValue">  search for</label>
+  <input type="text" name="searchValue" id = "searchValue" value="" autofocus/>
 
   <div class = "checkbox-inline">
     <!--label for"FoodItem   ">FoodItem</label-->
@@ -93,23 +98,33 @@
   </div>
 
 </div>
-
 <!--input type="submit" name="" value="Search" /-->
-
 
 </form>
 
+
+<!-- ****** -->
+<!--   ADD  -->
+<!-- ****** -->
 <form method="GET" action="RestaurantVisitAddResults" />
 
-
-<input type="text" name="name" value="" autofocus/>
-<input type="text" name="foodItem" value="" autofocus/>
-<input type="text" name="cost" value="" autofocus/>
+<style type="text/css">
+  .ui-datepicker {z-index:100;}
+</style>
 
 <div class="contain">
-<div class="form-group">
-  <input type="Date" class="form-control" name="date" value="12/05/2015" id="dp" background-color=#ffg/>
-</div>
+
+  <div class="form-inline">
+    <input type="text" name="name" value="" autofocus/>
+
+    <input type="text" name="foodItem" value="" autofocus/>
+
+    <label> cost</label>
+    <input type="text" name="cost" value="" autofocus/>
+
+    <label for="dp"> date</label>
+    <input type="Date" class="form-control" name="date" value="" id="dp" background-color=#ffg autofocus/>
+  </div>
 </div>
 <script>
 
@@ -120,10 +135,10 @@
 
 </script>
 
-
 <input type="submit" name="" value="Add" />
 
 </form>
+
 
 </body>
 </html>
