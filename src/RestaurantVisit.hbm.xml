@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.enterprise.java.Project.RestaurantVisit" table="restaurant_visit_temp">
+    <class name="com.enterprise.java.Project.model.RestaurantVisit" table="restaurant_visit_temp">
         <meta attribute="class-description">
             This class contains the user role detail.
         </meta>

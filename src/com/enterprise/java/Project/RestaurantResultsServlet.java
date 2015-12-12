@@ -1,5 +1,6 @@
 package com.enterprise.java.Project;
 
+import com.enterprise.java.Project.model.RestaurantVisitSearch;
 import com.enterprise.java.Project.persistence.RestaurantVisitDao;
 
 import java.io.*;

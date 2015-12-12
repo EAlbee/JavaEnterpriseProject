@@ -1,12 +1,6 @@
 
-import java.sql.Date;
-import com.enterprise.java.Project.RestaurantVisit;
+import com.enterprise.java.Project.model.RestaurantVisit;
 import com.enterprise.java.Project.persistence.RestaurantVisitDao;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 
 
 /**

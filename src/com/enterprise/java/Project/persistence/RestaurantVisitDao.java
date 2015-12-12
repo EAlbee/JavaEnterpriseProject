@@ -3,14 +3,12 @@ package com.enterprise.java.Project.persistence;
 import java.lang.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Iterator;
 //import java.util.logging.Logger;
 import org.apache.log4j.Logger;
 
-import com.enterprise.java.Project.RestaurantVisit;
-import com.enterprise.java.Project.RestaurantVisitSearch;
+import com.enterprise.java.Project.model.RestaurantVisit;
+import com.enterprise.java.Project.model.RestaurantVisitSearch;
 import org.hibernate.*;
-import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 
@@ -51,7 +49,7 @@ public class RestaurantVisitDao {
         //TODO update to return a list
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
         //Transaction tx = null;
-        //String hql = "FROM com.enterprise.java.Project.RestaurantVisit R " +
+        //String hql = "FROM com.enterprise.java.Project.model.RestaurantVisit R " +
         //         " WHERE R.visitRestaurantName like :restaurantName";
         //String hql = "FROM RestaurantVisit r where r.restaurant_name like :restaurantName";
         //List restaurantVisits = null;     com.enterprise.java.Project.
@@ -59,11 +57,11 @@ public class RestaurantVisitDao {
         criteria.add(Restrictions.like("visitRestaurantName", restaurantVisitSearch.getSearchTerm(), MatchMode.ANYWHERE));
         try {
             //tx = session.beginTransaction();
-            //List<RestaurantVisit> restaurantVisits = session.createQuery("FROM com.enterprise.java.Project.RestaurantVisit").list();
+            //List<RestaurantVisit> restaurantVisits = session.createQuery("FROM com.enterprise.java.Project.model.RestaurantVisit").list();
             //ArrayList<RestaurantVisit> restaurantVisits = new ArrayList<RestaurantVisit>();
 
             List<RestaurantVisit> restaurantVisits = null;
-            //query = session.createQuery("FROM com.enterprise.java.Project.RestaurantVisit WHERE restaurant_name =:name").list();
+            //query = session.createQuery("FROM com.enterprise.java.Project.model.RestaurantVisit WHERE restaurant_name =:name").list();
             //Query query = session.createQuery(hql);
             //query.setParameter("restaurantName", restaurantVisitSearch.getSearchTerm());
             restaurantVisits = criteria.list();

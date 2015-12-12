@@ -1,5 +1,6 @@
 package com.enterprise.java.Project;
 
+import com.enterprise.java.Project.model.RestaurantVisit;
 import com.enterprise.java.Project.persistence.RestaurantVisitDao;
 
 import java.io.*;
@@ -7,12 +8,8 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import org.apache.log4j.Logger;
-import java.math.*;
-import java.text.DateFormat;
+
 import java.text.ParseException;
-import java.util.Date;
-import java.util.Calendar;
-import java.sql.*;
 
 
 /**

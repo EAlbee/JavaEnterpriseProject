@@ -1,4 +1,4 @@
-package com.enterprise.java.Project;
+package com.enterprise.java.Project.model;
 
 import java.io.*;
 import java.sql.*;
