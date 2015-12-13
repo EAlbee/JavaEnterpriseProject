@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d421847a-3076-48d0-8f65-5223aeaaec17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaEnterpriseProject.iml" afterPath="$PROJECT_DIR$/JavaEnterpriseProject.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/JavaEnterpriseProject_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/JavaEnterpriseProject_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/RestaurantVisitSearchAndResults.jsp" afterPath="$PROJECT_DIR$/web/RestaurantVisitSearchAndResults.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/enterprise/java/Project/RestaurantYelpServlet.java" afterPath="$PROJECT_DIR$/src/com/enterprise/java/Project/RestaurantYelpServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/enterprise/java/Project/model/YelpAPI.java" afterPath="$PROJECT_DIR$/src/com/enterprise/java/Project/model/YelpAPI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
@@ -52,11 +48,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="RestaurantVisitSearchAndResults.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RestaurantVisitSearchAndResults.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/RestaurantVisitSearchAndResults.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.2075472">
-              <caret line="170" column="49" selection-start-line="170" selection-start-column="49" selection-end-line="170" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.087855294">
+              <caret line="152" column="0" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -72,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RestaurantYelpServlet.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RestaurantYelpServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/enterprise/java/Project/RestaurantYelpServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7250674">
+            <state vertical-scroll-proportion="0.0">
               <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -164,9 +160,9 @@
         <option value="$PROJECT_DIR$/src/com/enterprise/java/Project/model/TwoStepOAuth.java" />
         <option value="$PROJECT_DIR$/tests/com/enterprise/java/Project/persistence/RestaurantVisitDaoTest.java" />
         <option value="$PROJECT_DIR$/tests/com/enterprise/java/Project/RestaurantVisitSearchTest.java" />
-        <option value="$PROJECT_DIR$/web/RestaurantVisitSearchAndResults.jsp" />
         <option value="$PROJECT_DIR$/src/com/enterprise/java/Project/model/YelpAPI.java" />
         <option value="$PROJECT_DIR$/src/com/enterprise/java/Project/RestaurantYelpServlet.java" />
+        <option value="$PROJECT_DIR$/web/RestaurantVisitSearchAndResults.jsp" />
       </list>
     </option>
   </component>
@@ -1027,7 +1023,7 @@
       <workItem from="1449340651933" duration="14306000" />
       <workItem from="1449540467341" duration="2426000" />
       <workItem from="1449712782209" duration="5589000" />
-      <workItem from="1449968436534" duration="12147000" />
+      <workItem from="1449968436534" duration="13393000" />
     </task>
     <task id="LOCAL-00001" summary="more log4j in servlets">
       <created>1447887824997</created>
@@ -1089,11 +1085,17 @@
       <option name="project" value="LOCAL" />
       <updated>1450027886753</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Yelp search - got JSON back">
+      <created>1450035266541</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1450035266541</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93963000" />
+    <option name="totallyTimeSpent" value="95209000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="22" y="0" width="1299" height="771" extended-state="0" />
@@ -1108,7 +1110,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32961586" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29411766" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29411766" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1119,7 +1121,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39819005" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39819005" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1151,7 +1153,8 @@
     <MESSAGE value="added datepicker" />
     <MESSAGE value="got datepicker adding date and displaying(not in great format)" />
     <MESSAGE value="Yelp search fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Yelp search fix" />
+    <MESSAGE value="Yelp search - got JSON back" />
+    <option name="LAST_COMMIT_MESSAGE" value="Yelp search - got JSON back" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1590,14 +1593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/RestaurantVisitSearchAndResults.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2075472">
-          <caret line="170" column="49" selection-start-line="170" selection-start-column="49" selection-end-line="170" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/enterprise/java/Project/RestaurantResultsServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1636,11 +1631,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/enterprise/java/Project/RestaurantYelpServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7250674">
+        <state vertical-scroll-proportion="0.0">
           <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/RestaurantVisitSearchAndResults.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.087855294">
+          <caret line="152" column="0" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

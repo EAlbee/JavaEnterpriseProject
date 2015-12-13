@@ -151,6 +151,19 @@
 </form>
 
 
+<script>
+  var business = "${businesses}"
+
+  $(document).ready(function() {
+    var table = $('<table/>').appendTo($('#somediv'));
+    $(persons).each(function(i, business) {
+      $('<tr/>').appendTo(table)
+              .append($('<td/>').text(business.name))
+              .append($('<td/>').text(business.rating));
+    });
+  });
+</script>
+
 <table class = "table table-striped">
   <thead>
   <tr bgcolor="#6495ED">
