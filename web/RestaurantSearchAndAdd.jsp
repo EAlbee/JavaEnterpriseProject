@@ -40,72 +40,86 @@
 <h2>Restaurant Search  <!--c:import url="/jsp/EmployeeSearchResultsFooter.jsp" /--></h2>
 <!--<h3>{type} Results for: {term}</h3>-->
 <body>
-<table class = "table table-striped">
+
+
+
+<!-- ************** -->
+<!--   SEARCH AREA  -->
+<!-- ************** -->
+<form method="GET" action="RestaurantAreaSearchResults" >
+  <input type="text" name="term" value="" autofocus/>
+  <input type="text" name="location" value="" autofocus/>
+
+  <input type="submit" name="" value="Search Area" />
+</form>
+
+
+<table class="table table-striped" >
   <thead>
-  <tr bgcolor="#6495ED">
-    <th>ID</th>
-    <th>&nbsp;&nbsp;</th>
-    <th>Name</th>
-    <th>&nbsp;&nbsp;</th>
-    <th>Item</th>
-    <th>&nbsp;&nbsp;</th>
-    <th>Cost</th>
-    <th>&nbsp;&nbsp;</th>
-    <th>tip</th>
-    <th>&nbsp;&nbsp;</th>
-    <th>date#</th>
-    <th>&nbsp;&nbsp;</th>
+  <tr>
+    <th>name</th>
+    <th>rating</th>
   </tr>
   </thead>
-  <c:forEach var="restaurant" items="${results}">
-    <tr>
-
-      <td>${restaurant.getId()}</td>
-      <td>&nbsp;&nbsp;</td>
-      <td>${restaurant.getVisitRestaurantName()}</td>
-      <td>&nbsp;&nbsp;</td>
-      <td>${restaurant.getVisitItem()}</td>
-      <td>&nbsp;&nbsp;</td>
-      <td>${restaurant.getVisitTotalCost()}</td>
-      <td>&nbsp;&nbsp;</td>
-      <td>${restaurant.getVisitDate().time}</td>
-      <td>&nbsp;&nbsp;</td>
-
-
-    </tr>
-  </c:forEach>
 </table>
 
+<script>
+  $(document).ready(function() {
+    var json = ${businesses}
+
+    var tr;
+    for (var i = 0; i < json.length; i++) {
+
+      tr = $('<tr/>');
+      tr.append("<td>" + i + "</td>");
+      tr.append("<td>" + json[i].name + "</td>");
+      tr.append("<td>" + json[i].rating + "</td>");
+
+      $('table').append(tr);
+
+    }
+
+  });
+
+</script>
+
+
 <!-- ****** -->
-<!-- SEARCH -->
+<!--   ADD  -->
 <!-- ****** -->
-<form method="GET" action="RestaurantVisitSearchResults" >
+<form method="GET" action="RestaurantVisitAddResults" >
 
-<div class = "form-group">
+  <div class="contain">
 
-  <label for="searchValue">  search for</label>
-  <input type="text" name="searchValue" id = "searchValue" value="" autofocus/>
+    <div class="form-inline">
 
-  <div class = "checkbox-inline">
-    <!--label for"FoodItem   ">FoodItem</label-->
-    <input type="radio" name="search" id="FoodItem" value="searchFoodItem" checked="checked" /> FoodItem
+      <input type="text" name="name" value="" autofocus/>
+
+      <input type="text" name="foodItem" value="" autofocus/>
+
+      <label> cost</label>
+      <input type="text" name="cost" value="" autofocus/>
+
+      <label for="dp"> date</label>
+      <input type="Date" class="form-control" name="date" value="" id="dp" background-color=#ffg autofocus/>
+    </div>
   </div>
-  <div class = "checkbox-inline">
-    <!--label for"RestaurantName">Restaurant Name</label-->
-    <input type="radio" name="search" id= "RestaurantName" value="searchName" /> RestaurantName
-  </div>
+  <script>
 
-  <div class = "checkbox-inline">
-    <button type = "submit" class = "btn btn-default" value="Search">Search</button>
-  </div>
+    $( "#dp" ).datepicker({
+      changeMonth: true,
+      changeYear: true
+    });
 
-</div>
-<!--input type="submit" name="" value="Search" /-->
+  </script>
+
+  <input type="submit" name="" value="Add" />
 
 </form>
 
 
-<a href="RestaurantSearchAndAdd.jsp"class="btn btn-info" role="button">Add new</a>
+
+<a href="RestaurantVisitSearchAndResults.jsp"class="btn btn-info" role="button">Search Visited Restaurants</a>
 
 </body>
 </html>

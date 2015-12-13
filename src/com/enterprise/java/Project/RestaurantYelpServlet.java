@@ -79,7 +79,7 @@ public class RestaurantYelpServlet  extends HttpServlet {
 
         session.setAttribute("businesses", businesses);
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/RestaurantVisitSearchAndResults.jsp");
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/RestaurantSearchAndAdd.jsp");
         dispatcher.forward(request, response);
     }
 }
