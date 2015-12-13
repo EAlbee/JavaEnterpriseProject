@@ -7,9 +7,11 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import org.apache.log4j.Logger;
+import org.json.simple.JSONArray;
 //import com.enterprise.
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 
 /**
  * Created by Student on 12/12/2015.
@@ -34,18 +36,27 @@ public class RestaurantYelpServlet  extends HttpServlet {
         logger.info("**************************************************************************");
         logger.info("RestaurantYelpServlet doGet");
 
-        String[] args = new String[0];
-
-        YelpAPICLI yelpApiCli = new YelpAPICLI();
-        new JCommander(yelpApiCli, args);
-
-        YelpAPI yelpApi = new YelpAPI("", "", "", "");
-        queryAPI(yelpApi, yelpApiCli);
-
-
         ServletContext context = getServletContext();
         HttpSession session = request.getSession();
 
+
+        String term = (request.getParameter("term"));
+        String location = (request.getParameter("location"));
+
+        String[] args = new String[] {term,location};
+
+        YelpAPI.YelpAPICLI yelpApiCli = new YelpAPI.YelpAPICLI();
+        new JCommander(yelpApiCli, args);
+
+        YelpAPI yelpApi = new YelpAPI("McniIjle69sZSxqqC9IRcA","Jw-SrN4fMc3Qtnlja83QOVfWFe0",
+                "5rIIW7rOkcfUzLCN_UQGI_a6Gu1XszjH","o7khIl9s1sYFaEGHdV9i9BfUR94");
+
+
+        JSONArray businesses = new JSONArray();
+        YelpAPI.queryAPI(yelpApi, yelpApiCli);
+
+
+        session.setAttribute("businesses", businesses);
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/RestaurantVisitSearchAndResults.jsp");
         dispatcher.forward(request, response);

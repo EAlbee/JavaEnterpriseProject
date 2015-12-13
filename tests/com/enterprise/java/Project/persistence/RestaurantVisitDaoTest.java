@@ -1,7 +1,7 @@
 package com.enterprise.java.Project.persistence;
 
-import com.enterprise.java.Project.RestaurantVisit;
-import com.enterprise.java.Project.RestaurantVisitSearch;
+import com.enterprise.java.Project.model.RestaurantVisit;
+import com.enterprise.java.Project.model.RestaurantVisitSearch;
 import java.util.*;
 import static org.junit.Assert.*;
 import org.junit.Test;

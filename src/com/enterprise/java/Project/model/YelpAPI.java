@@ -124,7 +124,7 @@ public class YelpAPI {
    * @param yelpApi <tt>YelpAPI</tt> service instance
    * @param yelpApiCli <tt>YelpAPICLI</tt> command line arguments
    */
-  private static void queryAPI(YelpAPI yelpApi, YelpAPICLI yelpApiCli) {
+  public static void queryAPI(YelpAPI yelpApi, YelpAPICLI yelpApiCli) {
     String searchResponseJSON =
         yelpApi.searchForBusinessesByLocation(yelpApiCli.term, yelpApiCli.location);
 
@@ -147,19 +147,21 @@ public class YelpAPI {
 
     // Select the first business and display business details
     String businessResponseJSON = yelpApi.searchByBusinessId(firstBusinessID.toString());
-    System.out.println(String.format("Result for business \"%s\" found:", firstBusinessID));
-    System.out.println(businessResponseJSON);
+    //System.out.println(String.format("Result for business \"%s\" found:", firstBusinessID));
+    //System.out.println(businessResponseJSON);
   }
 
   /**
    * Command-line interface for the sample Yelp API runner.
    */
-  private static class YelpAPICLI {
-    //@Parameter(names = {"-q", "--term"}, description = "Search Query Term")
+  public static class YelpAPICLI {
+    @Parameter(names = {"-q", "--term"}, description = "Search Query Term")
     public String term = DEFAULT_TERM;
 
-    //@Parameter(names = {"-l", "--location"}, description = "Location to be Queried")
+    @Parameter(names = {"-l", "--location"}, description = "Location to be Queried")
     public String location = DEFAULT_LOCATION;
+
+
   }
 
   /**
