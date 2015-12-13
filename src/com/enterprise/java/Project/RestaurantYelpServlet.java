@@ -8,6 +8,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import org.apache.log4j.Logger;
 import org.json.simple.JSONArray;
+//import org.json.simple.parser.
 //import com.enterprise.
 
 import java.io.IOException;
@@ -17,8 +18,8 @@ import java.lang.reflect.Method;
  * Created by Student on 12/12/2015.
  */
 @WebServlet(
-        name = "RestaurantVisitSearchResults",
-        urlPatterns = { "/RestaurantVisitSearchResults" }
+        name = "RestaurantAreaSearchResults",
+        urlPatterns = { "/RestaurantAreaSearchResults" }
 )
 public class RestaurantYelpServlet  extends HttpServlet {
     private final Logger logger = Logger.getLogger(RestaurantResultsServlet.class);
@@ -40,21 +41,41 @@ public class RestaurantYelpServlet  extends HttpServlet {
         HttpSession session = request.getSession();
 
 
-        String term = (request.getParameter("term"));
-        String location = (request.getParameter("location"));
+        //String term = null;
+        //String location = null;
 
-        String[] args = new String[] {term,location};
+
+
+        //String[] args = new String[] {term,location};
+
+
 
         YelpAPI.YelpAPICLI yelpApiCli = new YelpAPI.YelpAPICLI();
-        new JCommander(yelpApiCli, args);
+        logger.info("create yelpApiCli-010");
+        logger.info("getParameter:term" + request.getParameter("term"));
+        if (request.getParameter("term").length()  > 0) {
+            //term = (request.getParameter("term"));
 
-        YelpAPI yelpApi = new YelpAPI("McniIjle69sZSxqqC9IRcA","Jw-SrN4fMc3Qtnlja83QOVfWFe0",
-                "5rIIW7rOkcfUzLCN_UQGI_a6Gu1XszjH","o7khIl9s1sYFaEGHdV9i9BfUR94");
+            yelpApiCli.setTerm(request.getParameter("term"));
+            logger.info("updated term-015");
+        }
+        if (request.getParameter("location").length() > 0) {
+            //location = (request.getParameter("location"));
+            yelpApiCli.setLocation(request.getParameter("location"));
+        }
 
 
+
+        //new JCommander(yelpApiCli, args);
+
+        YelpAPI yelpApi = new YelpAPI("McniIjle69sZSxqqC9IRcA","Jw-SrN4fMc3Qtnlja83QOVfWFe0","5rIIW7rOkcfUzLCN_UQGI_a6Gu1XszjH","o7khIl9s1sYFaEGHdV9i9BfUR94");
+        //YelpAPI yelpApi = new YelpAPI();
+
+        logger.info("new YelpAPI created");
         JSONArray businesses = new JSONArray();
-        YelpAPI.queryAPI(yelpApi, yelpApiCli);
-
+        logger.info("start YelpQuery-020");
+        businesses = yelpApi.queryAPI(yelpApi, yelpApiCli);
+        logger.info(businesses.toString());
 
         session.setAttribute("businesses", businesses);
 

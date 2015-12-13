@@ -77,7 +77,7 @@
 <!-- ****** -->
 <!-- SEARCH -->
 <!-- ****** -->
-<form method="GET" action="RestaurantVisitSearchResults" />
+<form method="GET" action="RestaurantVisitSearchResults" >
 
 <div class = "form-group">
 
@@ -106,7 +106,7 @@
 <!-- ****** -->
 <!--   ADD  -->
 <!-- ****** -->
-<form method="GET" action="RestaurantVisitAddResults" />
+<form method="GET" action="RestaurantVisitAddResults" >
 
 <style type="text/css">
   .ui-datepicker {z-index:100;}
@@ -139,6 +139,53 @@
 
 </form>
 
+
+<!-- ****** -->
+<!--   ADD  -->
+<!-- ****** -->
+<form method="GET" action="RestaurantAreaSearchResults" >
+  <input type="text" name="term" value="" autofocus/>
+  <input type="text" name="location" value="" autofocus/>
+
+  <input type="submit" name="" value="Search Area" />
+</form>
+
+
+<table class = "table table-striped">
+  <thead>
+  <tr bgcolor="#6495ED">
+    <th>ID</th>
+    <th>&nbsp;&nbsp;</th>
+    <th>Name</th>
+    <th>&nbsp;&nbsp;</th>
+    <th>Item</th>
+    <th>&nbsp;&nbsp;</th>
+    <th>Cost</th>
+    <th>&nbsp;&nbsp;</th>
+    <th>tip</th>
+    <th>&nbsp;&nbsp;</th>
+    <th>date#</th>
+    <th>&nbsp;&nbsp;</th>
+  </tr>
+  </thead>
+  <c:forEach var="restaurant" items="${businesses}">
+    <tr>
+
+      <td>${restaurant.getId()}</td>
+      <td>&nbsp;&nbsp;</td>
+      <td>${restaurant.getVisitRestaurantName()}</td>
+      <td>&nbsp;&nbsp;</td>
+      <td>${restaurant.getVisitItem()}</td>
+      <td>&nbsp;&nbsp;</td>
+      <td>${restaurant.getVisitTotalCost()}</td>
+      <td>&nbsp;&nbsp;</td>
+      <td>${restaurant.getVisitDate().time}</td>
+      <td>&nbsp;&nbsp;</td>
+
+
+    </tr>
+  </c:forEach>
+</table>
 
 </body>
 </html>

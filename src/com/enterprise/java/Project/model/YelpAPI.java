@@ -124,7 +124,8 @@ public class YelpAPI {
    * @param yelpApi <tt>YelpAPI</tt> service instance
    * @param yelpApiCli <tt>YelpAPICLI</tt> command line arguments
    */
-  public static void queryAPI(YelpAPI yelpApi, YelpAPICLI yelpApiCli) {
+  //public static void queryAPI(YelpAPI yelpApi, YelpAPICLI yelpApiCli) {
+  public JSONArray queryAPI(YelpAPI yelpApi, YelpAPICLI yelpApiCli) {
     String searchResponseJSON =
         yelpApi.searchForBusinessesByLocation(yelpApiCli.term, yelpApiCli.location);
 
@@ -149,19 +150,34 @@ public class YelpAPI {
     String businessResponseJSON = yelpApi.searchByBusinessId(firstBusinessID.toString());
     //System.out.println(String.format("Result for business \"%s\" found:", firstBusinessID));
     //System.out.println(businessResponseJSON);
+    return businesses;
   }
 
   /**
    * Command-line interface for the sample Yelp API runner.
    */
   public static class YelpAPICLI {
-    @Parameter(names = {"-q", "--term"}, description = "Search Query Term")
+    //@Parameter(names = {"-q", "--term"}, description = "Search Query Term")
     public String term = DEFAULT_TERM;
 
-    @Parameter(names = {"-l", "--location"}, description = "Location to be Queried")
+    //@Parameter(names = {"-l", "--location"}, description = "Location to be Queried")
     public String location = DEFAULT_LOCATION;
 
+    public String getTerm() {
+      return term;
+    }
 
+    public void setTerm(String term) {
+      this.term = term;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public void setLocation(String location) {
+      this.location = location;
+    }
   }
 
   /**
@@ -174,6 +190,6 @@ public class YelpAPI {
     new JCommander(yelpApiCli, args);
 
     YelpAPI yelpApi = new YelpAPI(CONSUMER_KEY, CONSUMER_SECRET, TOKEN, TOKEN_SECRET);
-    queryAPI(yelpApi, yelpApiCli);
+    //queryAPI(yelpApi, yelpApiCli);
   }
 }
