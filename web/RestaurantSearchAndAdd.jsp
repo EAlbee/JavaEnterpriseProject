@@ -139,25 +139,28 @@
       <input type="Date" class="form-control" name="date" value="" id="dp" background-color=#ffg autofocus/>
     </div>
     <div class="col-md-3 text-center">
+
       <input type="submit" name="" value=" Add " />
+
     </div>
 
   </div>
-  <script>
-
-    $( "#dp" ).datepicker({
-      changeMonth: true,
-      changeYear: true
-    });
-
-
-    $('input[name=sitebg]').val('000000');
-    var json = ${businesses}
-  </script>
 
 </form>
+<br><br>
 
-<br>
+<script>
+
+  $( "#dp" ).datepicker({
+    changeMonth: true,
+    changeYear: true
+  });
+
+
+  $('input[name=sitebg]').val('000000');
+  var json = ${businesses}
+</script>
+
 
 <a href="RestaurantVisitSearchAndResults.jsp"class="btn btn-info" role="button">Search Visited Restaurants</a>
 
