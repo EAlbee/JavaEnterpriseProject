@@ -39,7 +39,7 @@
 
   <h2>Restaurant Search  <!--c:import url="/jsp/EmployeeSearchResultsFooter.jsp" /--></h2>
   <!--<h3>{type} Results for: {term}</h3>-->
-  <br style="margin:4;padding:4">
+  <body style="margin:4;padding:4">
 
 
   <!-- ************** -->
@@ -57,4 +57,5 @@
 
 
 </body>
+  </div>
 </html>

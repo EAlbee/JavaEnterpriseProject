@@ -47,11 +47,13 @@
     <th>&nbsp;&nbsp;</th>
     <th>Name</th>
     <th>&nbsp;&nbsp;</th>
+    <th>City</th>
+    <th>&nbsp;&nbsp;</th>
+    <th>State</th>
+    <th>&nbsp;&nbsp;</th>
     <th>Item</th>
     <th>&nbsp;&nbsp;</th>
     <th>Cost</th>
-    <th>&nbsp;&nbsp;</th>
-    <th>tip</th>
     <th>&nbsp;&nbsp;</th>
     <th>date#</th>
     <th>&nbsp;&nbsp;</th>
@@ -63,6 +65,10 @@
       <td>${restaurant.getId()}</td>
       <td>&nbsp;&nbsp;</td>
       <td>${restaurant.getVisitRestaurantName()}</td>
+      <td>&nbsp;&nbsp;</td>
+      <td>${restaurant.getVisitLocationCity()}</td>
+      <td>&nbsp;&nbsp;</td>
+      <td>${restaurant.getVisitLocationState()}</td>
       <td>&nbsp;&nbsp;</td>
       <td>${restaurant.getVisitItem()}</td>
       <td>&nbsp;&nbsp;</td>

@@ -16,5 +16,7 @@
         <property name="visitItem" column="item" type="string"/>
         <property name="visitTotalCost" column="cost" type="double"/>
         <property name="visitDate" column="date" type="calendar"/>
+        <property name="visitLocationCity" column="city" type="string"/>
+        <property name="visitLocationState" column="state" type="string"/>
     </class>
 </hibernate-mapping>

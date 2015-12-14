@@ -42,6 +42,8 @@ public class RestaurantAddServlet extends HttpServlet {
         RestaurantVisitDao restaurantVisitDao = new RestaurantVisitDao();
 
         restaurantVisit.setVisitRestaurantName(request.getParameter("name"));
+        restaurantVisit.setVisitLocationCity(request.getParameter("city"));
+        restaurantVisit.setVisitLocationState(request.getParameter("state"));
         restaurantVisit.setVisitItem(request.getParameter("foodItem"));
         restaurantVisit.setVisitTotalCost(new Double(request.getParameter("cost")));
         //restaurantVisit.setVisitDate((java.sql.Date) new Date(request.getParameter("date")));
@@ -65,6 +67,8 @@ public class RestaurantAddServlet extends HttpServlet {
 //        session.setAttribute("type", restaurantVisitSearch.getSearchType());
         //session.setAttribute("term", "ERIC");
         session.setAttribute("name", restaurantVisit.getVisitRestaurantName());
+        session.setAttribute("city", restaurantVisit.getVisitLocationCity());
+        session.setAttribute("state", restaurantVisit.getVisitLocationState());
         session.setAttribute("foodItem", restaurantVisit.getVisitItem());
         session.setAttribute("cost", restaurantVisit.getVisitTotalCost());
         session.setAttribute("date", restaurantVisit.getVisitDate());
