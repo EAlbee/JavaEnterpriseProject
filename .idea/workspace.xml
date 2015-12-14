@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d421847a-3076-48d0-8f65-5223aeaaec17" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/enterprise/java/Project/RestaurantAddServlet.java" afterPath="$PROJECT_DIR$/src/com/enterprise/java/Project/RestaurantAddServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/RestaurantSearchYelp.jsp" afterPath="$PROJECT_DIR$/web/RestaurantSearchYelp.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/RestaurantVisit.hbm.xml" afterPath="$PROJECT_DIR$/src/RestaurantVisit.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/RestaurantVisitSearchAndResults.jsp" afterPath="$PROJECT_DIR$/web/RestaurantVisitSearchAndResults.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/RestaurantSearchAndAdd.jsp" afterPath="$PROJECT_DIR$/web/RestaurantSearchAndAdd.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/enterprise/java/Project/model/YelpAPI.java" afterPath="$PROJECT_DIR$/src/com/enterprise/java/Project/model/YelpAPI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
@@ -88,7 +84,18 @@
     <favorites_list name="JavaEnterpriseProject" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="RestaurantSearchAndAdd.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/RestaurantSearchAndAdd.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.24757281">
+              <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -132,16 +139,16 @@
         <option value="$PROJECT_DIR$/src/com/enterprise/java/Project/model/TwoStepOAuth.java" />
         <option value="$PROJECT_DIR$/tests/com/enterprise/java/Project/persistence/RestaurantVisitDaoTest.java" />
         <option value="$PROJECT_DIR$/tests/com/enterprise/java/Project/RestaurantVisitSearchTest.java" />
-        <option value="$PROJECT_DIR$/src/com/enterprise/java/Project/model/YelpAPI.java" />
         <option value="$PROJECT_DIR$/src/com/enterprise/java/Project/RestaurantYelpServlet.java" />
         <option value="$PROJECT_DIR$/web/bootstrap/css/Custom.css" />
         <option value="$PROJECT_DIR$/web/index.jsp" />
         <option value="$PROJECT_DIR$/web/login.jsp" />
-        <option value="$PROJECT_DIR$/web/RestaurantSearchAndAdd.jsp" />
         <option value="$PROJECT_DIR$/src/RestaurantVisit.hbm.xml" />
         <option value="$PROJECT_DIR$/web/RestaurantVisitSearchAndResults.jsp" />
         <option value="$PROJECT_DIR$/src/com/enterprise/java/Project/RestaurantAddServlet.java" />
         <option value="$PROJECT_DIR$/web/RestaurantSearchYelp.jsp" />
+        <option value="$PROJECT_DIR$/src/com/enterprise/java/Project/model/YelpAPI.java" />
+        <option value="$PROJECT_DIR$/web/RestaurantSearchAndAdd.jsp" />
       </list>
     </option>
   </component>
@@ -376,6 +383,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaEnterpriseProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaEnterpriseProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="review_1_feedback" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -921,7 +942,7 @@
       <workItem from="1449712782209" duration="5589000" />
       <workItem from="1449968436534" duration="13393000" />
       <workItem from="1450040190472" duration="7975000" />
-      <workItem from="1450053070785" duration="15778000" />
+      <workItem from="1450053070785" duration="18133000" />
     </task>
     <task id="LOCAL-00001" summary="more log4j in servlets">
       <created>1447887824997</created>
@@ -1001,15 +1022,21 @@
       <option name="project" value="LOCAL" />
       <updated>1450069668684</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="more refinement">
+      <created>1450070934017</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1450070934017</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118962000" />
+    <option name="totallyTimeSpent" value="121317000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="9" y="3" width="1260" height="764" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1024,7 +1051,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26446944" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26446944" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23392282" sideWeight="0.48" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1066,7 +1093,8 @@
     <MESSAGE value="Yelp search - got JSON back" />
     <MESSAGE value="seperated out jsp functions for cleaner look" />
     <MESSAGE value="a few adjustments" />
-    <option name="LAST_COMMIT_MESSAGE" value="a few adjustments" />
+    <MESSAGE value="more refinement" />
+    <option name="LAST_COMMIT_MESSAGE" value="more refinement" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1115,19 +1143,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/web/RestaurantSearchAndAdd.jsp</url>
-          <line>97</line>
-          <properties />
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/web/RestaurantSearchAndAdd.jsp</url>
-          <line>100</line>
-          <properties />
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/web/RestaurantSearchAndAdd.jsp</url>
-          <line>110</line>
+          <line>116</line>
           <properties />
           <option name="timeStamp" value="41" />
         </line-breakpoint>
@@ -1467,14 +1483,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/enterprise/java/Project/model/YelpAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26236558">
-          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/bootstrap/css/Custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32903227">
@@ -1495,14 +1503,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.461538">
           <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/RestaurantSearchAndAdd.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.9179955">
-          <caret line="127" column="13" selection-start-line="127" selection-start-column="13" selection-end-line="127" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1545,6 +1545,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.8252428">
           <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/enterprise/java/Project/model/YelpAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40215054">
+          <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/RestaurantSearchAndAdd.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24757281">
+          <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
           <folding />
         </state>
       </provider>

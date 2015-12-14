@@ -42,17 +42,32 @@
 <!--<h3>{type} Results for: {term}</h3>-->
 <body style="margin:3;padding:3">
 
-
+<div class="container">
+<div class="form-inline">
 <!-- ************** -->
 <!--   SEARCH AREA  -->
 <!-- ************** -->
 <form method="GET" action="RestaurantAreaSearchResults" >
-  <input type="text" name="term" value="food" autofocus/>
-  <input type="text" name="location" value="Madison, WI" autofocus/>
+  <input type="text" name="term" value="food" />
+  <input type="text" name="location" value="Madison, WI"/>
 
   <input type="submit" name="" value="Search Area" />
+  <label>        </label>
+  <input type="text" id="choice" values="" style="width:6%"autofocus/>
+  <a href="#" id="1" class="btn" onclick="populate()" data-product-name="Soap">select id</a>
 </form>
 
+<!--******-->
+<!-- Load -->
+<!--******-->
+<form class="form-inline">
+  <form>
+
+  </form>
+
+</form>
+</div>
+</div>
 
 <table class="table table-striped" >
   <thead>
@@ -90,16 +105,7 @@
 </script>
 
 
-<!--******-->
-<!-- Load -->
-<!--******-->
-<form class="form-inline">
-  <form>
-    <input type="text" id="choice" values="" autofocus/>
-    <a href="#" id="1" class="btn" onclick="populate()" data-product-name="Soap">select id</a>
-  </form>
 
-</form>
 <br>
 
 
@@ -111,6 +117,7 @@
     document.getElementById("name").value = json[choice].name;
     document.getElementById("city").value = json[choice].location.city;
     document.getElementById("state").value = json[choice].location.state_code;
+    document.getElementById("foodItem").onfocus;
 
   }
 
@@ -126,15 +133,15 @@
 
     <div class="form-inline">
       <label> name</label>
-      <input type="text" name="name" id="name" value="" autofocus/>
+      <input type="text" name="name" id="name" value="" />
       <label> city</label>
-      <input type="text" name="city" id="city" value="" autofocus/>
+      <input type="text" name="city" id="city" value="" />
       <label> state</label>
-      <input type="text" name="state" id="state" value="" autofocus/>
+      <input type="text" name="state" id="state" value="" maxlength="2" style="width:5%" />
       <label> food</label>
       <input type="text" name="foodItem" id="foodItem" value="" autofocus/>
       <label> cost</label>
-      <input type="text" name="cost" id="cost" value="" autofocus/>
+      <input type="text" name="cost" id="cost" value="" style="width:6%" autofocus/>
       <label for="dp"> date</label>
       <input type="Date" class="form-control" name="date" value="" id="dp" background-color=#ffg autofocus/>
     </div>
@@ -164,7 +171,7 @@
 
 <a href="RestaurantVisitSearchAndResults.jsp"class="btn btn-info" role="button">Search Visited Restaurants</a>
 
-
+<br>
 
 </body>
   </div>
