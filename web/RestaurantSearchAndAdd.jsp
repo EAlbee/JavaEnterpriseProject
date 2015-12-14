@@ -9,9 +9,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html lang="en">
+<html>
+<div lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Select Restaurant</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -39,16 +40,15 @@
 
 <h2>Restaurant Search  <!--c:import url="/jsp/EmployeeSearchResultsFooter.jsp" /--></h2>
 <!--<h3>{type} Results for: {term}</h3>-->
-<body>
-
+<body style="margin:3;padding:3">
 
 
 <!-- ************** -->
 <!--   SEARCH AREA  -->
 <!-- ************** -->
 <form method="GET" action="RestaurantAreaSearchResults" >
-  <input type="text" name="term" value="" autofocus/>
-  <input type="text" name="location" value="" autofocus/>
+  <input type="text" name="term" value="food" autofocus/>
+  <input type="text" name="location" value="Madison, WI" autofocus/>
 
   <input type="submit" name="" value="Search Area" />
 </form>
@@ -57,7 +57,10 @@
 <table class="table table-striped" >
   <thead>
   <tr>
+    <th>id</th>
     <th>name</th>
+    <th>address</th>
+    <th>concept</th>
     <th>rating</th>
   </tr>
   </thead>
@@ -73,6 +76,9 @@
       tr = $('<tr/>');
       tr.append("<td>" + i + "</td>");
       tr.append("<td>" + json[i].name + "</td>");
+      tr.append("<td>" + json[i].location.display_address + "</td>");
+      tr.append("<td>" + json[i].categories + "</td>");
+
       tr.append("<td>" + json[i].rating + "</td>");
 
       $('table').append(tr);
@@ -80,6 +86,33 @@
     }
 
   });
+
+</script>
+
+
+<!--******-->
+<!-- Load -->
+<!--******-->
+<form class="form-inline">
+  <form>
+    <input type="text" id="choice" values="" autofocus/>
+    <a href="#" id="1" class="btn" onclick="populate()" data-product-name="Soap">select id</a>
+  </form>
+
+</form>
+<br>
+
+
+<script type="text/javascript">
+
+  function populate()
+  {
+    choice = document.getElementById("choice").value;
+    document.getElementById("name").value = json[choice].name;
+    document.getElementById("city").value = json[choice].location.city;
+    document.getElementById("state").value = json[choice].location.state_code;
+
+  }
 
 </script>
 
@@ -92,17 +125,23 @@
   <div class="contain">
 
     <div class="form-inline">
-
-      <input type="text" name="name" value="" autofocus/>
-
-      <input type="text" name="foodItem" value="" autofocus/>
-
+      <label> name</label>
+      <input type="text" name="name" id="name" value="" autofocus/>
+      <label> city</label>
+      <input type="text" name="city" id="city" value="" autofocus/>
+      <label> state</label>
+      <input type="text" name="state" id="state" value="" autofocus/>
+      <label> food</label>
+      <input type="text" name="foodItem" id="foodItem" value="" autofocus/>
       <label> cost</label>
-      <input type="text" name="cost" value="" autofocus/>
-
+      <input type="text" name="cost" id="cost" value="" autofocus/>
       <label for="dp"> date</label>
       <input type="Date" class="form-control" name="date" value="" id="dp" background-color=#ffg autofocus/>
     </div>
+    <div class="col-md-3 text-center">
+      <input type="submit" name="" value=" Add " />
+    </div>
+
   </div>
   <script>
 
@@ -111,15 +150,19 @@
       changeYear: true
     });
 
-  </script>
 
-  <input type="submit" name="" value="Add" />
+    $('input[name=sitebg]').val('000000');
+    var json = ${businesses}
+  </script>
 
 </form>
 
-
+<br>
 
 <a href="RestaurantVisitSearchAndResults.jsp"class="btn btn-info" role="button">Search Visited Restaurants</a>
 
+
+
 </body>
+  </div>
 </html>

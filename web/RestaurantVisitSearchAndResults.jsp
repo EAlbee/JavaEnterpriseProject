@@ -11,7 +11,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Eat Experience</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -37,9 +37,9 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src = "bootstrap/js/bootstrap.min.js"></script>
 
-<h2>Restaurant Search  <!--c:import url="/jsp/EmployeeSearchResultsFooter.jsp" /--></h2>
+<h2>MyDinnerExperience  <!--c:import url="/jsp/EmployeeSearchResultsFooter.jsp" /--></h2>
 <!--<h3>{type} Results for: {term}</h3>-->
-<body>
+<body style="margin:3;padding:3">
 <table class = "table table-striped">
   <thead>
   <tr bgcolor="#6495ED">
@@ -105,7 +105,7 @@
 </form>
 
 
-<a href="RestaurantSearchAndAdd.jsp"class="btn btn-info" role="button">Add new</a>
+<a href="RestaurantSearchYelp.jsp"class="btn btn-info" role="button">Add new</a>
 
 </body>
 </html>
