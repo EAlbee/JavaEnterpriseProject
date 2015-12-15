@@ -4,7 +4,7 @@ import com.enterprise.java.Project.persistence.RestaurantVisitDao;
 
 
 /**
- * Created by Student on 11/7/2015.
+ * Created by Eric Albee on 11/7/2015.
  */
 public class RestaurantVisitDriver {
     public static void main(String[] args) {
