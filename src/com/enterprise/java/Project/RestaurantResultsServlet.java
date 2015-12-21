@@ -64,6 +64,9 @@ public class RestaurantResultsServlet extends HttpServlet {
         else if (type.equals("searchName")) {
             restaurantVisitDao.searchRestaurantName(restaurantVisitSearch);
        }
+        else if (type.equals("searchDate")) {
+            restaurantVisitDao.searchRecent(restaurantVisitSearch);
+        }
 //
 //        if (type.equals("searchID")) {
 //           restaurantVisitDao.searchRestaurantVisit(restaurantVisitSearch);

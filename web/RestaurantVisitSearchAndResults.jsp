@@ -11,7 +11,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
-  <title>Eat Experience</title>
+  <title>Eat Food</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -37,7 +37,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src = "bootstrap/js/bootstrap.min.js"></script>
 
-<h2>MyDinnerExperience  <!--c:import url="/jsp/EmployeeSearchResultsFooter.jsp" /--></h2>
+<h2>MyDinner  <!--c:import url="/jsp/EmployeeSearchResultsFooter.jsp" /--></h2>
 <!--<h3>{type} Results for: {term}</h3>-->
 <body style="margin:3;padding:3">
 <table class = "table table-striped">
@@ -59,6 +59,7 @@
     <th>&nbsp;&nbsp;</th>
   </tr>
   </thead>
+  <c:set var="total" value="0" scope="page" />
   <c:forEach var="restaurant" items="${results}">
     <tr>
 
@@ -72,14 +73,30 @@
       <td>&nbsp;&nbsp;</td>
       <td>${restaurant.getVisitItem()}</td>
       <td>&nbsp;&nbsp;</td>
-      <td>${restaurant.getVisitTotalCost()}</td>
+      <td align="right"><fmt:formatNumber pattern="0.00">${restaurant.getVisitTotalCost()}</fmt:formatNumber> </td>
       <td>&nbsp;&nbsp;</td>
       <td>${restaurant.getVisitDate().time}</td>
       <td>&nbsp;&nbsp;</td>
 
-
     </tr>
+    <c:set var="total" value="${total + restaurant.getVisitTotalCost()}"></c:set>
   </c:forEach>
+  <tr>
+    <td> </td>
+    <td>&nbsp;&nbsp;</td>
+    <td> </td>
+    <td>&nbsp;&nbsp;</td>
+    <td> </td>
+    <td>&nbsp;&nbsp;</td>
+    <td> </td>
+    <td>&nbsp;&nbsp;</td>
+    <td>Total: </td>
+    <td>&nbsp;&nbsp;</td>
+    <td align="right"><fmt:formatNumber pattern="0.00">${total}</fmt:formatNumber></td>
+    <td>&nbsp;&nbsp;</td>
+    <td>${restaurant.getVisitDate().time}</td>
+    <td>&nbsp;&nbsp;</td>
+  </tr>
 </table>
 
 <!-- ****** -->
@@ -91,6 +108,8 @@
 
   <label for="searchValue">  search for</label>
   <input type="text" name="searchValue" id = "searchValue" value="" autofocus/>
+  <!--input type="Date" class="form-control" name="date" value="" id="dp" background-color=#ffg autofocus visiable=false/-->
+
 
   <div class = "checkbox-inline">
     <!--label for"FoodItem   ">FoodItem</label-->
@@ -101,6 +120,7 @@
     <input type="radio" name="search" id= "RestaurantName" value="searchName" /> RestaurantName
   </div>
 
+
   <div class = "checkbox-inline">
     <button type = "submit" class = "btn btn-default" value="Search">Search</button>
   </div>
@@ -110,6 +130,13 @@
 
 </form>
 
+<script>
+  $( "#dp" ).datepicker({
+    changeMonth: true,
+    changeYear: true
+  });
+
+</script>
 
 <a href="RestaurantSearchYelp.jsp"class="btn btn-info" role="button">Add new</a>
 

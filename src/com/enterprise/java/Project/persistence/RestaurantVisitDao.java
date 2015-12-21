@@ -2,6 +2,7 @@ package com.enterprise.java.Project.persistence;
 
 import java.lang.*;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 //import java.util.logging.Logger;
 import org.apache.log4j.Logger;
@@ -82,7 +83,7 @@ public class RestaurantVisitDao {
         /*Try block complete */
     }
 
-    //SEARCH Name
+    //SEARCH Food
     public void searchFoodItem(RestaurantVisitSearch restaurantVisitSearch) {
         logger.info("searchFoodItem in dao");
 
@@ -106,9 +107,9 @@ public class RestaurantVisitDao {
     }
 
 
-    //SEARCH Name
+    //SEARCH Recent
     public void searchRecent(RestaurantVisitSearch restaurantVisitSearch) {
-        logger.info("searchFoodItem in dao");
+        logger.info("searchRecent in dao");
 
         Session session = SessionFactoryProvider.getSessionFactory().openSession();
 
@@ -116,7 +117,10 @@ public class RestaurantVisitDao {
 
         Criteria criteria = session.createCriteria(RestaurantVisit.class);
         criteria.setMaxResults(numberOfRecent);
-        criteria.add(Restrictions.like("visitItem", restaurantVisitSearch.getSearchTerm(), MatchMode.ANYWHERE));
+        //Calendar cal = Calendar.getInstance();
+        //cal.setTime(restaurantVisitSearch.getSearchTerm());
+        //cal.isSet()
+        //criteria.add(Restrictions.between("visitDate", restaurantVisitSearch.getSearchTerm()), );
         try {
 
             List<RestaurantVisit> restaurantVisits = null;
